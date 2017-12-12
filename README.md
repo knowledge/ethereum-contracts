@@ -7,7 +7,8 @@ npm i
 ### Run
 
 ```
-npm run start
+npm run develop
+npm run deploy
 ```
 
 ### Test
