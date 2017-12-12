@@ -4,13 +4,17 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf ./build",
     "postinstall": "truffle install",
-    "build": "truffle compile",
-    "start": "truffle develop && npm run deploy",
+    "build": "npm run clean && truffle compile",
+    "develop": "truffle develop",
     "deploy": "truffle migrate",
     "test": "truffle test"
   },
   "dependencies": {
     "truffle": "^4.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
   }
 }
