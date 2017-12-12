@@ -1,0 +1,7 @@
+build
+installed_contracts
+node_modules
+
+.idea
+.vscode
+.DS_Store

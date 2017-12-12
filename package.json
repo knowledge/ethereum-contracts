@@ -1,0 +1,16 @@
+{
+  "name": "knowledge-contracts",
+  "description": "Knowleadge Contracts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "truffle install",
+    "build": "truffle compile",
+    "start": "truffle develop && npm run deploy",
+    "deploy": "truffle migrate",
+    "test": "truffle test"
+  },
+  "dependencies": {
+    "truffle": "^4.0.1"
+  }
+}

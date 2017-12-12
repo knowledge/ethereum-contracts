@@ -1,0 +1,9 @@
+{
+  "package_name": "knowleadge-contracts",
+  "description": "Knowleadge Contracts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "zeppelin": "1.3.0"
+  }
+}
