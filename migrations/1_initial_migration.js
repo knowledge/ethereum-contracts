@@ -1,5 +1,3 @@
-var Migrations = artifacts.require("./Migrations.sol");
+const Migration = artifacts.require('./Migration.sol')
 
-module.exports = function(deployer) {
-  deployer.deploy(Migrations);
-};
+module.exports = deployer => deployer.deploy(Migration)
