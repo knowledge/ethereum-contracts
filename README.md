@@ -2,7 +2,7 @@
 
 This repository contains all Ethereum contracts used at Knowledge.
 
-Truffle Framework is our development and testing framework and asset pipeline for Ethereum.
+Truffle is our development and testing framework.
 
 With Truffle, you get:
 
