@@ -1,5 +1,8 @@
 # Knowledge Ethereum Contracts
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg)](https://git.io/col)
+
 This repository contains all Ethereum contracts used at Knowledge.
 
 Truffle is our development and testing framework.
@@ -47,9 +50,17 @@ npm run test
 npm run deploy
 ```
 
+## Contributing
+
+Read the [contributing guidelines](CONTRIBUTING.md) for details.
+
+## License
+
+MIT © [Knowledge](http://knowledge.io)  
+See LICENSE for more info
 
 ---
-#### About Knowledge
+## About Knowledge
 
 Knowledge.io is about rewarding and celebrating knowledge. Everyone possesses knowledge, and is shaped through their individual life experiences, but opportunities to share, showcase, and receive the benefit of one’s own knowledge can be scarce for most people. Knowledge.io introduces a platform to applaud and reward users for sharing their knowledge. Knowledge.io proposes a platform that will enable its participants to attain an immediate reward and validation through gamified learning, verification of expertise, and cutting-edge ad tech based technology.
 
