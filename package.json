@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./build",
+    "lint": "standard .",
     "postinstall": "truffle install",
     "build": "npm run clean && truffle compile",
     "develop": "truffle develop",
@@ -15,6 +16,7 @@
     "truffle": "^4.0.1"
   },
   "devDependencies": {
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "standard": "^10.0.3"
   }
 }
