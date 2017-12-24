@@ -1,7 +1,8 @@
 # Knowledge Ethereum Contracts
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg)](https://git.io/col)
+[![StandardJS Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Collaborative Etiquete](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg)](https://git.io/col)
+[![Travis](https://img.shields.io/travis/knowledge/knowledge-project-guidelines.svg)](https://travis-ci.org/knowledge/knowledge-contracts)
 
 This repository contains all Ethereum contracts used at Knowledge.
 
@@ -19,7 +20,7 @@ With Truffle, you get:
 - External script runner that executes scripts within a Truffle environment.
 
 ```
-npm install -g truffle
+npm i -g truffle ganache-cli
 ```
 
 
