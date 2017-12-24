@@ -1,5 +1,5 @@
-const { credit } = require('./utils');
-const Token = artifacts.require("./Token.sol")
+const { credit } = require('./utils')
+const Token = artifacts.require('./Token.sol')
 
 contract('Token', accounts => {
   const amount = 3000
