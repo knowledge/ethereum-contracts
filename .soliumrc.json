@@ -1,0 +1,20 @@
+{
+  "extends": "solium:all",
+  "plugins": [
+    "security"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "indentation": [
+      "error",
+      2
+    ],
+    "arg-overflow": [
+      "warning",
+      3
+    ]
+  }
+}
