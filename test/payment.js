@@ -1,10 +1,10 @@
-const { credit } = require('./utils');
-const Payment = artifacts.require("./Payment.sol")
+const { credit } = require('./utils')
+const Payment = artifacts.require('./Payment.sol')
 
 contract('Payment', accounts => {
   const amount = 3000
 
-  before(() => 
+  before(() =>
     Promise.all(accounts.map(account => credit(account, amount)))
   )
 
