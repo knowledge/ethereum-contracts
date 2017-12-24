@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./build",
-    "lint": "standard .",
+    "lint": "solium -d contracts/; standard",
     "postinstall": "truffle install",
     "build": "npm run clean && truffle compile",
     "develop": "truffle develop",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
+    "solium": "^1.1.0",
     "standard": "^10.0.3"
   },
   "repository": {
