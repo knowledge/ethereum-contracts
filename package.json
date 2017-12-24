@@ -18,5 +18,13 @@
   "devDependencies": {
     "rimraf": "^2.6.2",
     "standard": "^10.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowledge/knowledge-contracts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/knowledge/knowledge-contracts/issues"
+  },
+  "homepage": "https://github.com/knowledge/knowledge-contracts#readme"
 }
