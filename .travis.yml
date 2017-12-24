@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 8.9.3
+install:
+  - npm i -g truffle ganache-cli
+  - npm install
+script:
+  - npm run lint
+  - ganache-cli > /dev/null
+  - truffle migrate
+  - travis_wait 55 truffle test
