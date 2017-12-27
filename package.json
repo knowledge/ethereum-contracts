@@ -10,12 +10,14 @@
     "build": "npm run clean && truffle compile",
     "develop": "truffle develop",
     "deploy": "truffle migrate",
-    "test": "truffle test"
+    "test": "truffle test",
+    "doctoc": "doctoc --github --title \"## Contents\" README.md"
   },
   "dependencies": {
     "truffle": "^4.0.1"
   },
   "devDependencies": {
+    "doctoc": "^1.3.0",
     "rimraf": "^2.6.2",
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
