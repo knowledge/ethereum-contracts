@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf ./build",
     "lint": "standard | snazzy; solium -d contracts/",
+    "coverage": "solidity-coverage",
     "postinstall": "truffle install",
     "build": "npm run clean && truffle compile",
     "develop": "truffle develop",
@@ -22,6 +23,7 @@
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
     "solium": "^1.1.0",
+    "solidity-coverage": "^0.4.7",
     "standard": "^10.0.3"
   },
   "standard": {
