@@ -1,12 +1,12 @@
 pragma solidity ^0.4.18;
 
-import './Token.sol';
+import { Knowledge } from './Knowledge.sol';
 
 contract Payment {
-  Token private token;
+  Knowledge private token;
 
-  function Payment(address tokenAddress) {
-    token = Token(tokenAddress);
+  function Payment(address tokenAddress) public {
+    token = Knowledge(tokenAddress);
   }
 
   event Recived(
@@ -17,6 +17,7 @@ contract Payment {
 
   function pay(address to, uint256 amount, string ref ) public returns (bool) {
     Recived(msg.sender, amount, ref);
+    // Check DELEGATECALL Homestead
     token.transfer(to, amount);
     return true;
   }
