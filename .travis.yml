@@ -6,6 +6,5 @@ install:
   - npm install
 script:
   - npm run lint
-  - ganache-cli > /dev/null
-  - truffle migrate
-  - travis_wait 55 truffle test
+  - ./node_modules/.bin/run-with-testrpc 'truffle migrate'
+  - travis_wait 55 ./node_modules/.bin/run-with-testrpc 'truffle test'
