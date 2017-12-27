@@ -23,6 +23,7 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
   - [Testing your code](#testing-your-code)
   - [Deploying to the TestNet](#deploying-to-the-testnet)
 - [Contributing](#contributing)
+- [Bug Reporting](#bug-reporting)
 - [License](#license)
 - [About Knowledge](#about-knowledge)
 
@@ -89,6 +90,11 @@ _work in progress..._
 ## Contributing
 
 Read the [contributing guidelines](CONTRIBUTING.md) for details.
+
+## Bug Reporting
+
+Please report bugs big and small by [opening an issue](https://github.com/knowledge/knowledge-contracts/issues/new). No possible bug report is too small.
+
 
 ## License
 
