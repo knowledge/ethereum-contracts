@@ -1,4 +1,14 @@
-const Token = artifacts.require('./Token.sol')
+module.exports = {
+  async expectThrow(promise) {
+    const errMsg = 'Expected throw not received'
 
-module.exports.credit = (account, amount) =>
-  Token.deployed().then(token => token.mint(account, amount))
+    try {
+      await promise
+    } catch (err) {
+      assert(err.toString().includes('invalid opcode'), errMsg)
+      return
+    }
+
+    assert.fail(errMsg)
+  }
+}
