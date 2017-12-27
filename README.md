@@ -46,7 +46,7 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
 
 ## Getting Started
 
-For you to able to understand and execute the code in this repository advanced knowledge of JavaScript, Node.js and Ethereum Solidity is required. If you are not familiar with these technologies we suggest you to visit [ethereum.org/](https://ethereum.org/) and [learnnode.com/](https://learnnode.com/).
+For you to able to understand and execute the code in this repository advanced knowledge of JavaScript, Node.js and Ethereum Solidity is required. If you are not familiar with these technologies we suggest you to visit [ethereum.org](https://ethereum.org/) and [learnnode.com](https://learnnode.com/).
 
 ### Environment Dependencies
 
@@ -101,10 +101,9 @@ Please report bugs big and small by [opening an issue](https://github.com/knowle
 MIT © [Knowledge](http://knowledge.io)  
 See LICENSE for more info
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_large)
 
 ---
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_large)
 
 ## About Knowledge
 
