@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
+    "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
     "solium": "^1.1.0",
     "standard": "^10.0.3"
