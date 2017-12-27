@@ -5,52 +5,86 @@
 [![Travis](https://img.shields.io/travis/knowledge/knowledge-project-guidelines.svg)](https://travis-ci.org/knowledge/knowledge-contracts)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_shield)
 
-This repository contains all Ethereum contracts used at Knowledge.
+This repository contains all Ethereum Smart Contracts used at Knowledge.
 
-Truffle is our development and testing framework.
+Truffle is our development, testing and deployment framework.  
+OpenZeppelin is the solidity library we use for writing secure Smart Contracts on Ethereum.  
+We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowledge-project-guidelines/) and [Consensys Best Practices](https://consensys.github.io/smart-contract-best-practices).
 
-With Truffle, you get:
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
 
-- Smart contract compilation, linking, deployment and binary management.
-- Automated contract testing with Mocha and Chai.
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Environment Dependencies](#environment-dependencies)
+  - [Project Dependencies](#project-dependencies)
+  - [Running Development Mode](#running-development-mode)
+  - [Testing your code](#testing-your-code)
+  - [Deploying to the TestNet](#deploying-to-the-testnet)
+- [Contributing](#contributing)
+- [License](#license)
+- [About Knowledge](#about-knowledge)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Features
+
+- Smart contract compilation, deployment and binary management.
+- Automated contract testing with [Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai).
+- Solidity code linting with [Solium](https://github.com/duaraghav8/Solium).
+- JavaScript code linting with [StandardJS](https://github.com/standard/standard).
+- Secure solidity utility functions with [OpenZeppelin Solidity ](https://github.com/OpenZeppelin/zeppelin-solidity)
+- Continuous integration testing with [Travis CI](https://about.travis-ci.com/)
 - Configurable build pipeline with support for custom build processes.
-- Scriptable deployment & migrations framework.
+- Scriptable deployment & migrations with Truffle framework.
 - Network management for deploying to many public & private networks.
 - Interactive console for direct contract communication.
 - Instant rebuilding of assets during development.
 - External script runner that executes scripts within a Truffle environment.
 
+## Getting Started
+
+For you to able to understand and execute the code in this repository advanced knowledge of JavaScript, Node.js and Ethereum Solidity is required. If you are not familiar with these technologies we suggest you to visit [ethereum.org/](https://ethereum.org/) and [learnnode.com/](https://learnnode.com/).
+
+### Environment Dependencies
+
+You need some global environment configurations
+
+- install [Node.js](https://github.com/nodejs/node) v8.9.3. We recommend using [nvm and avn to manage the node versions](https://gaboesquivel.com/blog/2015/automatic-node.js-version-switching/).
+- install [Truffle](https://github.com/trufflesuite/truffle/) `npm i -g truffle`
+- install [Ganache CLI](https://github.com/trufflesuite/ganache-cli) `npm i -g ganache-cli`
+
+### Project Dependencies
+
+In the project root directory run `npm install` to install all project dependencies
+
+### Running Development Mode
+
+In separate tabs of your console run the following commands:
+
 ```
-npm i -g truffle ganache-cli
-```
-
-
-## Commands
-
-### Start
-
-```
-npm i
-```
-
-### Run
-
-```
+ganache-cli
 npm run develop
 npm run deploy
 ```
 
-### Test
+For more information visit the Truffle Framework documentation.
+
+### Testing your code
+
+We do both static linting and analysis and functional tests.
 
 ```
+ganache-cli
+npm run lint
 npm run test
 ```
 
-## Deploy
+### Deploying to the TestNet
 
-```
-npm run deploy
-```
+_work in progress..._
+
 
 ## Contributing
 
@@ -60,6 +94,7 @@ Read the [contributing guidelines](CONTRIBUTING.md) for details.
 
 MIT © [Knowledge](http://knowledge.io)  
 See LICENSE for more info
+
 
 ---
 
