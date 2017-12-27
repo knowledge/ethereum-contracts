@@ -3,6 +3,7 @@
 [![StandardJS Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Collaborative Etiquete](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg)](https://git.io/col)
 [![Travis](https://img.shields.io/travis/knowledge/knowledge-project-guidelines.svg)](https://travis-ci.org/knowledge/knowledge-contracts)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_shield)
 
 This repository contains all Ethereum contracts used at Knowledge.
 
@@ -61,6 +62,9 @@ MIT © [Knowledge](http://knowledge.io)
 See LICENSE for more info
 
 ---
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_large)
+
 ## About Knowledge
 
 Knowledge.io is about rewarding and celebrating knowledge. Everyone possesses knowledge, and is shaped through their individual life experiences, but opportunities to share, showcase, and receive the benefit of one’s own knowledge can be scarce for most people. Knowledge.io introduces a platform to applaud and reward users for sharing their knowledge. Knowledge.io proposes a platform that will enable its participants to attain an immediate reward and validation through gamified learning, verification of expertise, and cutting-edge ad tech based technology.
