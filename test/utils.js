@@ -1,5 +1,5 @@
 module.exports = {
-  async expectThrow(promise) {
+  async expectThrow (promise) {
     const errMsg = 'Expected throw not received'
 
     try {

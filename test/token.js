@@ -4,7 +4,7 @@ const { expectThrow } = require('./utils')
 const initialSupply = 125000000 * 10 ** 8
 
 contract('Knowledge', accounts => {
-  let KNW;
+  let KNW
 
   beforeEach(async () => {
     KNW = await Knowledge.new()
@@ -83,8 +83,8 @@ contract('Knowledge', accounts => {
     })
 
     it('should be able to approve tokens & withdraw twice', async () => {
-      let allowance;
-      let balance;
+      let allowance
+      let balance
 
       await KNW.approve(accounts[1], 100, { from: accounts[0] })
       allowance = await KNW.allowance(accounts[0], accounts[1])
@@ -114,8 +114,8 @@ contract('Knowledge', accounts => {
     })
 
     it('should fail to approve tokens & withdraw more than approved', async () => {
-      let allowance;
-      let balance;
+      let allowance
+      let balance
 
       await KNW.approve(accounts[1], 100, { from: accounts[0] })
       allowance = await KNW.allowance(accounts[0], accounts[1])

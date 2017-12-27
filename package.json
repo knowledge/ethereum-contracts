@@ -39,7 +39,8 @@
       "expect",
       "artifacts",
       "assert",
-      "contract"
+      "contract",
+      "web3"
     ]
   },
   "repository": {
