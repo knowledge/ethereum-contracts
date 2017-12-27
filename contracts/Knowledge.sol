@@ -7,8 +7,8 @@ import { UpgradeableToken } from './Upgradable.sol';
  * Upgradable Standard ECR20 Token
  */
 contract Knowledge is UpgradeableToken {
-  string public constant name = "Knowledge";
-  string public constant symbol = "KNW";
+  string public constant name = 'Knowledge';
+  string public constant symbol = 'KNW';
   uint8 public constant decimals = 8;
 
   /** 125,000,000 KNW tokens */
