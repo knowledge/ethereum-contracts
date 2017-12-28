@@ -48,7 +48,7 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
 
 For you to able to understand and execute the code in this repository advanced knowledge of JavaScript, Node.js and Ethereum is required. If you are not familiar with these technologies we suggest you to visit [ethereum.org](https://ethereum.org/) and [learnnode.com](https://learnnode.com/).
 
-To get started with Solidity Contract-Oriented Programming you can find an introduction to the language in the [Solidity documentation](https://solidity.readthedocs.org). In the documentation, you can find [code examples](https://solidity.readthedocs.io/en/latest/solidity-by-example.html) as well as [a reference](https://solidity.readthedocs.io/en/latest/solidity-in-depth.html) of the syntax and details on how to write smart contracts.
+To get started with smart contract programming with Solidity you can find an introduction to the language in the [Solidity documentation](https://solidity.readthedocs.org). In the documentation, you can find [code examples](https://solidity.readthedocs.io/en/latest/solidity-by-example.html) as well as [a reference](https://solidity.readthedocs.io/en/latest/solidity-in-depth.html) of the syntax and details on how to write smart contracts.
 
 You can start using [Solidity in your browser](https://ethereum.github.io/browser-solidity/) with no need to download or compile anything.
 
