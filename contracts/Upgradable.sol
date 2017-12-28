@@ -3,6 +3,7 @@ pragma solidity ^0.4.18;
 import { StandardToken } from 'zeppelin/contracts/token/StandardToken.sol';
 import { SafeMath } from 'zeppelin/contracts/math/SafeMath.sol';
 
+
 /**
  * Upgrade agent interface inspired by Lunyr.
  *
@@ -36,6 +37,7 @@ contract UpgradeAgent {
    */
   function upgradeFrom(address _tokenHolder, uint256 _amount) external;
 }
+
 
 /**
  * A token upgrade mechanism where users can opt-in amount of tokens to the next smart contract revision.

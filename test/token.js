@@ -156,5 +156,14 @@ contract('Knowledge', accounts => {
       assert.strictEqual(approvalLog.args.spender, accounts[1])
       assert.strictEqual(approvalLog.args.value.toNumber(), 1000)
     })
+
+    it('should fire Pay event', async () => {
+      const res = await KNW.pay(accounts[1], 1000, 'ID', { from: accounts[0] })
+      const approvalLog = res.logs.find(element => element.event.match('Pay'))
+      assert.strictEqual(approvalLog.args.from, accounts[0])
+      assert.strictEqual(approvalLog.args.to, accounts[1])
+      assert.strictEqual(approvalLog.args.amount.toNumber(), 1000)
+      assert.strictEqual(approvalLog.args.ref, 'ID')
+    })
   })
 })
