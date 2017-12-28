@@ -12,20 +12,21 @@
     "develop": "truffle develop",
     "deploy": "truffle migrate",
     "test": "truffle test",
-    "doctoc": "doctoc --github --title \"## Contents\" README.md"
+    "doctoc": "doctoc --github --title \"## Contents\" README.md",
+    "ganache": "ganache-cli"
   },
-  "dependencies": {
-    "truffle": "^4.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "doctoc": "^1.3.0",
     "eth-gas-reporter": "^0.1.1",
+    "ganache-cli": "^6.0.3",
     "rimraf": "^2.6.2",
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
-    "solium": "^1.1.0",
     "solidity-coverage": "^0.4.7",
-    "standard": "^10.0.3"
+    "solium": "^1.1.0",
+    "standard": "^10.0.3",
+    "truffle": "^4.0.4"
   },
   "standard": {
     "globals": [

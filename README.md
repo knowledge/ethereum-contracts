@@ -69,8 +69,6 @@ You can start using [Solidity in your browser](https://ethereum.github.io/browse
 You need some global environment configurations
 
 - install [Node.js](https://github.com/nodejs/node) v8.9.3. We recommend using [nvm and avn to manage the node versions](https://gaboesquivel.com/blog/2015/automatic-node.js-version-switching/).
-- install [Truffle](https://github.com/trufflesuite/truffle/) `npm i -g truffle`
-- install [Ganache CLI](https://github.com/trufflesuite/ganache-cli) `npm i -g ganache-cli`
 
 ### Project Dependencies
 
@@ -81,7 +79,7 @@ In the project root directory run `npm install` to install all project dependenc
 In separate tabs of your console run the following commands:
 
 ```
-ganache-cli
+npm run ganache
 npm run develop
 npm run deploy
 ```
@@ -93,7 +91,7 @@ For more information visit the Truffle Framework documentation.
 We do both static linting and analysis and functional tests.
 
 ```
-ganache-cli
+npm run ganache
 npm run lint
 npm run test
 ```
