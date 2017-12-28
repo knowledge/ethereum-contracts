@@ -50,7 +50,7 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
 
 All ethereum solidity smart contracts can be found in the `/contracts` directory.
 
-- *Knowledge.sol*  is the ERC20 Token contract for the KNW token. It's an upgradable contract, which means that patches and upgrades can be deployed security without compromising the addresses, they get automatically migrated to the new contract version.
+- *Knowledge.sol*  is the ERC20 Token contract for the KNW token. It's an upgradable contract, which means that if we ever discover a security vulnerability or have the need to publish a another version of the token contract users will be able to migrate their tokens to the new contract version.
 - *Upgradable.sol* is the upgradable interface used by Knowledge token, it's inspired by Lunyr and Civic token contract.
 - *Payment.sol* is used to receive payments at the Knowledge Marketplace and Adviser Self Service Platform.
 - *Migration.sol* is a standard truffle contract needed for truffle integration and contract lifecycle management, not meant for use by Knowledge users.
