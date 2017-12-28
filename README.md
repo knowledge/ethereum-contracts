@@ -16,6 +16,7 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
 ## Contents
 
 - [Features](#features)
+- [Contracts](#contracts)
 - [Getting Started](#getting-started)
   - [Environment Dependencies](#environment-dependencies)
   - [Project Dependencies](#project-dependencies)
@@ -39,10 +40,21 @@ We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowled
 - Continuous integration testing with [Travis CI](https://about.travis-ci.com/)
 - Configurable build pipeline with support for custom build processes.
 - Scriptable deployment & migrations with Truffle framework.
+- Upgradable ERC20 Token contract.
 - Network management for deploying to many public & private networks.
 - Interactive console for direct contract communication.
 - Instant rebuilding of assets during development.
 - External script runner that executes scripts within a Truffle environment.
+
+## Contracts
+
+All ethereum solidity smart contracts can be found in the `/contracts` directory.
+
+- *Knowledge.sol*  is the ERC20 Token contract for the KNW token. It's an upgradable contract, which means that patches and upgrades can be deployed security without compromising the addresses, they get automatically migrated to the new contract version.
+- *Upgradable.sol* is the upgradable interface used by Knowledge token, it's inspired by Lunyr and Civic token contract.
+- *Payment.sol* is used to receive payments at the Knowledge Marketplace and Adviser Self Service Platform.
+- *Migration.sol* is a standard truffle contract needed for truffle integration and contract lifecycle management, not meant for use by Knowledge users.
+
 
 ## Getting Started
 
