@@ -1,42 +1,8 @@
 pragma solidity ^0.4.18;
 
-import { StandardToken } from 'zeppelin/contracts/token/StandardToken.sol';
-import { SafeMath } from 'zeppelin/contracts/math/SafeMath.sol';
-
-
-/**
- * Upgrade agent interface inspired by Lunyr.
- *
- * Upgrade agent transfers tokens to a new version of a token contract.
- * Upgrade agent can be set on a token by the upgrade master.
- *
- * Steps are
- * - Upgradeabletoken.upgradeMaster calls UpgradeableToken.setUpgradeAgent()
- * - Individual token holders can now call UpgradeableToken.upgrade()
- *   -> This results to call UpgradeAgent.upgradeFrom() that issues new tokens
- *   -> UpgradeableToken.upgrade() reduces the original total supply based on amount of upgraded tokens
- *
- * Upgrade agent itself can be the token contract, or just a middle man contract doing the heavy lifting.
- */
-contract UpgradeAgent {
-
-  uint public originalSupply;
-
-  /** Interface marker */
-  function isUpgradeAgent() public constant returns (bool) {
-    return true;
-  }
-
-  /**
-   * Upgrade amount of tokens to a new version.
-   *
-   * Only callable by UpgradeableToken.
-   *
-   * @param _tokenHolder Address that wants to upgrade its tokens
-   * @param _amount Number of tokens to upgrade. The address may consider to hold back some amount of tokens in the old version.
-   */
-  function upgradeFrom(address _tokenHolder, uint256 _amount) external;
-}
+import { ERC20Token } from './ERC20Token.sol';
+import { SafeMath } from './utils/SafeMath.sol';
+import { UpgradeAgent } from './interfaces/UpgradeAgent.sol';
 
 
 /**
@@ -44,9 +10,10 @@ contract UpgradeAgent {
  *
  * First envisioned by Golem and Lunyr projects.
  */
-contract UpgradeableToken is StandardToken {
+contract UpgradeableToken is ERC20Token {
+  using SafeMath for uint256;
 
-  /** Contract / person who can set the upgrade path. This can be the same as team multisig wallet, as what it is with its default value. */
+  /** Contract / person who can set the upgrade path. */
   address public upgradeMaster;
 
   /** The next contract where the tokens will be migrated. */
@@ -98,11 +65,11 @@ contract UpgradeableToken is StandardToken {
     // Validate input value.
     require(value != 0);
 
-    balances[msg.sender] = SafeMath.sub(balances[msg.sender], value);
+    balances[msg.sender] = balances[msg.sender].sub(value);
 
     // Take tokens out from circulation
-    totalSupply = SafeMath.sub(totalSupply, value);
-    totalUpgraded = SafeMath.add(totalUpgraded, value);
+    totalSupply = totalSupply.sub(value);
+    totalUpgraded = totalUpgraded.add(value);
 
     // Upgrade agent reissues the tokens
     upgradeAgent.upgradeFrom(msg.sender, value);
@@ -161,7 +128,7 @@ contract UpgradeableToken is StandardToken {
   /**
    * Child contract can enable to provide the condition when the upgrade can begun.
    */
-  function canUpgrade() public constant returns(bool) {
+  function canUpgrade() public pure returns(bool) {
     return true;
   }
 }

@@ -7,7 +7,6 @@
     "clean": "rimraf ./build",
     "lint": "standard | snazzy; solium -d contracts/",
     "coverage": "solidity-coverage",
-    "postinstall": "truffle install",
     "build": "npm run clean && truffle compile",
     "develop": "truffle develop",
     "deploy": "truffle migrate",
