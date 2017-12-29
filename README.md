@@ -12,6 +12,10 @@ Truffle is our development, testing and deployment framework.
 OpenZeppelin is the solidity library we use for writing secure Smart Contracts on Ethereum.  
 We follow the [Knowledge Project Guidelines](https://knowledge.github.io/knowledge-project-guidelines/) and [Consensys Best Practices](https://consensys.github.io/smart-contract-best-practices).
 
+### Knowledge Token Sale
+
+The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12pm. For more information visit [knowledge.io](https://knowledge.io) or join the [Knowledge Token Channel on Telegram](https://t.me/knowledgeio) where we'll be happy to discuss any questions you may have about our platform.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
