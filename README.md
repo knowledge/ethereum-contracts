@@ -4,6 +4,7 @@
 [![Collaborative Etiquete](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg)](https://git.io/col)
 [![Travis](https://img.shields.io/travis/knowledge/knowledge-project-guidelines.svg)](https://travis-ci.org/knowledge/knowledge-contracts)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fknowledge%2Fknowledge-contracts?ref=badge_shield)
+[![Gitter](https://badges.gitter.im/knowledge/knowledge-contracts.svg)](https://gitter.im/knowledge/knowledge-contracts)
 
 This repository contains all Ethereum Smart Contracts used at Knowledge.
 
