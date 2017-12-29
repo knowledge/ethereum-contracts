@@ -38,6 +38,3 @@ build/
 # editors
 .idea
 .vscode
-
-# solidity imports
-installed_contracts
