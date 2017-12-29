@@ -1,3 +1,3 @@
-const Migration = artifacts.require('./Migration.sol')
+const Migration = artifacts.require('Migrations')
 
 module.exports = deployer => deployer.deploy(Migration)
