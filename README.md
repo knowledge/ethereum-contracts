@@ -108,7 +108,7 @@ We use [Ropsten (revived) Tesnet](https://ropsten.etherscan.io/) as our user tes
 The deployment is done through [Infura.io](https://infura.io/).
 To create Ropsten Wallet Addresses and make use of the Knowledge contracts on the Ropsten TestNet you can use [metamask.io](https://metamask.io/) or a command line tool like [geth](https://github.com/ethereum/go-ethereum/wiki/geth).
 
-If you chose metamask in order to interact with the contract follow these instructions  https://support.metamask.io/kb/article/19-sending-tokens-with-metamask-and-myetherwallet
+If you chose metamask in order to interact with the contract follow these instructions  https://support.metamask.io/kb/article/4-managing-tokens
 
 To deploy from your computer first you need create the `.env` file on your machine based on `.env-sample`.
 Then run following command:
