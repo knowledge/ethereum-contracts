@@ -148,9 +148,48 @@ contract('Knowledge', accounts => {
     })
   })
 
+  describe('payments', () => {
+    it('should create a payment request', async () => {
+      await KNW.requestPayment(100, 5, 'ID', accounts[1], { from: accounts[0] })
+      const [value, fee, seller] = await KNW.paymentInfo(accounts[0], 'ID', { from: accounts[0] })
+      assert.strictEqual(value.toNumber(), 100)
+      assert.strictEqual(fee.toNumber(), 5)
+      assert.strictEqual(seller, accounts[1])
+    })
+
+    it('should make a payment', async () => {
+      // Privision account with founds
+      await KNW.transfer(accounts[1], 1000, { from: accounts[0] })
+      // Request a payment of 100 with a fee of 5
+      await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
+      // Make the payment
+      await KNW.pay(accounts[0], 'ID', { from: accounts[1] })
+
+      // Balance should be -1000 for the transfer, +5 for the fee
+      const masterBalance = await KNW.balanceOf(accounts[0])
+      assert.strictEqual(masterBalance.toNumber(), initialSupply - 995)
+
+      // Balance should be +1000 for the transfer, -100 for the payment, -5 for the fee
+      const customerBalance = await KNW.balanceOf(accounts[1])
+      assert.strictEqual(customerBalance.toNumber(), 895)
+
+      // Balance should be +100 for the payment
+      const sellerBalance = await KNW.balanceOf(accounts[2])
+      assert.strictEqual(sellerBalance.toNumber(), 100)
+    })
+  })
+
   describe('events', () => {
     it('should fire Transfer event', async () => {
-      const res = await KNW.approve(accounts[1], '1000', { from: accounts[0] })
+      const res = await KNW.transfer(accounts[1], 10000, { from: accounts[0] })
+      const approvalLog = res.logs.find(element => element.event.match('Transfer'))
+      assert.strictEqual(approvalLog.args.from, accounts[0])
+      assert.strictEqual(approvalLog.args.to, accounts[1])
+      assert.strictEqual(approvalLog.args.value.toNumber(), 10000)
+    })
+
+    it('should fire Approval event', async () => {
+      const res = await KNW.approve(accounts[1], 1000, { from: accounts[0] })
       const approvalLog = res.logs.find(element => element.event.match('Approval'))
       assert.strictEqual(approvalLog.args.owner, accounts[0])
       assert.strictEqual(approvalLog.args.spender, accounts[1])
@@ -158,11 +197,17 @@ contract('Knowledge', accounts => {
     })
 
     it('should fire Pay event', async () => {
-      const res = await KNW.pay(accounts[1], 1000, 'ID', { from: accounts[0] })
+      // Privision account with founds
+      await KNW.transfer(accounts[1], 1000, { from: accounts[0] })
+      // Request a payment of 100 with a fee of 5
+      await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
+      // Make the payment
+      const res = await KNW.pay(accounts[0], 'ID', { from: accounts[1] })
+
       const approvalLog = res.logs.find(element => element.event.match('Pay'))
-      assert.strictEqual(approvalLog.args.from, accounts[0])
-      assert.strictEqual(approvalLog.args.to, accounts[1])
-      assert.strictEqual(approvalLog.args.amount.toNumber(), 1000)
+      assert.strictEqual(approvalLog.args.from, accounts[1])
+      assert.strictEqual(approvalLog.args.to, accounts[2])
+      assert.strictEqual(approvalLog.args.amount.toNumber(), 100)
       assert.strictEqual(approvalLog.args.ref, 'ID')
     })
   })
