@@ -37,16 +37,19 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
 
 ## Features
 
-- Smart contract compilation, deployment and binary management.
+- Smart contract compilation, deployment and binary management with Truffle.
 - Automated contract testing with [Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai).
 - Solidity code linting with [Solium](https://github.com/duaraghav8/Solium).
 - JavaScript code linting with [StandardJS](https://github.com/standard/standard).
 - Secure solidity utility functions with [OpenZeppelin Solidity ](https://github.com/OpenZeppelin/zeppelin-solidity)
 - Continuous integration testing with [Travis CI](https://about.travis-ci.com/)
+- Code testing coverage reports with [solidity-coverage](https://github.com/sc-forks/solidity-coverage) and [codecov](https://codecov.io/)
+- Ethereum gas cost reporter with [eth-gas-reporter](https://github.com/cgewecke/eth-gas-reporter)
 - Configurable build pipeline with support for custom build processes.
 - Scriptable deployment & migrations with Truffle framework.
 - Upgradable ERC20 Token contract.
 - Network management for deploying to many public & private networks.
+- Ropsten TestNet deployment script.
 - Interactive console for direct contract communication.
 - Instant rebuilding of assets during development.
 - External script runner that executes scripts within a Truffle environment.
