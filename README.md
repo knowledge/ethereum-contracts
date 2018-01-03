@@ -103,8 +103,16 @@ npm run test
 
 ### Deploying to the TestNet
 
-_work in progress..._
+We use [Ropsten (revived) Tesnet](https://ropsten.etherscan.io/) as our user testing environment for our contracts.
+The deployment is done through [Infura.io](https://infura.io/).
+To create Ropsten Wallet Addresses and make use of the Knowledge contracts on the Ropsten TestNet you can use [metamask.io](https://metamask.io/) or a command line tool like [geth](https://github.com/ethereum/go-ethereum/wiki/geth).
 
+To deploy from your computer first you need create the `.env` file on your machine based on `.env-sample`.
+Then run following command:
+
+`npm run deploy-ropsten`
+
+The lastest version of the ERC20 Token on TestNet is `0x0205677f0e7e55ea7789d8e93137513c637e58b3`.
 
 ## Contributing
 
