@@ -14,8 +14,16 @@ module.exports = {
     },
     ropsten: {
       provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/${infuraToken}`),
-      gas: 67123900, // https://git.io/vbhSl
+      // https://git.io/vbhSl
+      gas: 6000000000,
+      gasPrice: 6000000000,
       network_id: 3
+    }
+  },
+  solc: {
+    optimizer: {
+      enabled: true,
+      runs: 200
     }
   },
   mocha: {
