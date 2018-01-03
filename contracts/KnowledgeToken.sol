@@ -13,8 +13,8 @@ contract Knowledge is PayableToken, UpgradeableToken {
   string public constant symbol = 'KNW';
   uint8 public constant decimals = 8;
 
-  /** 125,000,000.00000000 KNW tokens */
-  uint256 public constant INITIAL_SUPPLY = 12500000000000000;
+  /** 150,000,000.00000000 KNW tokens */
+  uint256 public constant INITIAL_SUPPLY = 15000000000000000;
 
   function Knowledge() UpgradeableToken(msg.sender) public {
     totalSupply = INITIAL_SUPPLY;

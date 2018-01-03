@@ -1,7 +1,7 @@
 const Knowledge = artifacts.require('Knowledge')
 const { expectThrow } = require('./utils')
 
-const initialSupply = 125000000 * 10 ** 8
+const initialSupply = 150000000 * 10 ** 8
 
 contract('Knowledge', accounts => {
   let KNW
@@ -11,7 +11,7 @@ contract('Knowledge', accounts => {
   })
 
   describe('creation', () => {
-    it('should create an initial balance of 125 million tokens for the creator', async () => {
+    it('should create an initial balance of 150 million tokens for the creator', async () => {
       const balance = await KNW.balanceOf(accounts[0])
       assert.strictEqual(balance.toNumber(), initialSupply)
     })
