@@ -55,11 +55,12 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
 
 All ethereum solidity smart contracts can be found in the `/contracts` directory.
 
-- *Knowledge.sol*  is the ERC20 Token contract for the KNW token. It's an upgradable contract, which means that if we ever discover a security vulnerability or have the need to publish a another version of the token contract users will be able to migrate their tokens to the new contract version.
-- *Upgradable.sol* is the upgradable interface used by Knowledge token, it's inspired by Lunyr and Civic token contract.
-- *Payment.sol* is used to receive payments at the Knowledge Marketplace and Adviser Self Service Platform.
-- *Migration.sol* is a standard truffle contract needed for truffle integration and contract lifecycle management, not meant for use by Knowledge users.
-
+- *ERC20Token.sol* is a standard ERC20 token contract, based on OpenZeppelin implementation.
+- *KnowledgeToken.sol*  is the ERC20 Token contract implementation for the KNW token. `125,000,000.00000000` tokens are created in total.
+- *UpgradableToken.sol* is used to be able to upgrade the contract. If we ever discover a security vulnerability or have the need to publish a another version of the token contract users will be able to migrate their tokens to the new contract version. It's inspired by Lunyr and Civic token contract.
+- *PayableToken.sol* is used to receive payments at the Knowledge Marketplace and Adviser Self Service Platform. It can generate payment requests and manage fees.
+- */utils/* is meant for utilitarian contracts, such as *SafeMath* or *Ownable*.
+- */interfaces/* are contracts used just for type safety.
 
 ## Getting Started
 
