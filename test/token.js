@@ -53,7 +53,7 @@ contract('Knowledge', accounts => {
 
     it('should fail when trying to transfer more tokens than the balance', async () => {
       const balance = await KNW.balanceOf(accounts[0])
-      expectThrow(KNW.transfer(accounts[1], balance + 1, { from: accounts[0] }))
+      await expectThrow(KNW.transfer(accounts[1], balance + 1, { from: accounts[0] }))
     })
 
     it('should handle zero-transfers normally', async () => {
@@ -133,18 +133,18 @@ contract('Knowledge', accounts => {
 
       // FIRST tx done.
       // onto next.
-      expectThrow(KNW.transferFrom(accounts[0], accounts[2], 60, { from: accounts[1] }))
+      await expectThrow(KNW.transferFrom(accounts[0], accounts[2], 60, { from: accounts[1] }))
     })
 
-    it('should fail to withdraw with no allowance', () => {
-      return expectThrow(KNW.transferFrom(accounts[0], accounts[2], 60, { from: accounts[1] }))
+    it('should fail to withdraw with no allowance', async () => {
+      await expectThrow(KNW.transferFrom(accounts[0], accounts[2], 60, { from: accounts[1] }))
     })
 
     it('should be able to approve tokens & revoke the approval', async () => {
       await KNW.approve(accounts[1], 100, { from: accounts[0] })
       await KNW.transferFrom(accounts[0], accounts[2], 60, { from: accounts[1] })
       await KNW.approve(accounts[1], 0, { from: accounts[0] })
-      expectThrow(KNW.transferFrom(accounts[0], accounts[2], 10, { from: accounts[1] }))
+      await expectThrow(KNW.transferFrom(accounts[0], accounts[2], 10, { from: accounts[1] }))
     })
   })
 
@@ -176,6 +176,25 @@ contract('Knowledge', accounts => {
       // Balance should be +100 for the payment
       const sellerBalance = await KNW.balanceOf(accounts[2])
       assert.strictEqual(sellerBalance.toNumber(), 100)
+    })
+
+    it('should fail at paying something that does not exist', async () => {
+      await expectThrow(KNW.pay(accounts[0], 'ID', { from: accounts[1] }))
+    })
+
+    it('should fail if the customer does not have all the founds and should revert the founds', async () => {
+      // Privision account with some founds
+      await KNW.transfer(accounts[1], 100, { from: accounts[0] })
+      // Request a payment of 100 with a fee of 5
+      await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
+      // Make the payment
+      await expectThrow(KNW.pay(accounts[0], 'ID', { from: accounts[1] }))
+
+      const customerBalance = await KNW.balanceOf(accounts[1])
+      assert.strictEqual(customerBalance.toNumber(), 100)
+
+      const sellerBalance = await KNW.balanceOf(accounts[2])
+      assert.strictEqual(sellerBalance.toNumber(), 0)
     })
   })
 

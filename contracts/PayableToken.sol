@@ -33,6 +33,7 @@ contract PayableToken is ERC20Token {
   function pay(address store, string ref) public returns (bool) {
     PaymentRequest memory paymentRequest = pendingPayments[store][ref];
 
+    assert(paymentRequest.seller != 0x0);
     assert(transfer(store, paymentRequest.fee));
     assert(transfer(paymentRequest.seller, paymentRequest.value));
 
