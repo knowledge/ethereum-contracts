@@ -1,0 +1,4009 @@
+{
+  "contractName": "UpgradeableToken",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "upgrade",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "upgradeAgent",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "upgradeMaster",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "name": "_subtractedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreaseApproval",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getUpgradeState",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "canUpgrade",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalUpgraded",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "name": "_addedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseApproval",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "setUpgradeAgent",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "remaining",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "master",
+          "type": "address"
+        }
+      ],
+      "name": "setUpgradeMaster",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_upgradeMaster",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Upgrade",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "agent",
+          "type": "address"
+        }
+      ],
+      "name": "UpgradeAgentSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "upgradeMaster",
+          "type": "address"
+        }
+      ],
+      "name": "NewUpgradeMaster",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b604051602080610c648339810160405280805160038054600160a060020a031916600160a060020a0383811691909117918290559193507f41215aff8c294dab52583f38146756951783ca3d8b887e22e03f4b276d02606c925016604051600160a060020a03909116815260200160405180910390a150610bcf806100956000396000f3006060604052600436106100cc5763ffffffff60e060020a600035041663095ea7b381146100d157806318160ddd1461010757806323b872dd1461012c57806345977d03146101545780635de4ccb01461016c578063600440cb1461019b57806366188463146101ae57806370a08231146101d05780638444b391146101ef5780639738968c14610226578063a9059cbb14610239578063c752ff621461025b578063d73dd6231461026e578063d7e7088a14610290578063dd62ed3e146102af578063ffeb7d75146102d4575b600080fd5b34156100dc57600080fd5b6100f3600160a060020a03600435166024356102f3565b604051901515815260200160405180910390f35b341561011257600080fd5b61011a61035f565b60405190815260200160405180910390f35b341561013757600080fd5b6100f3600160a060020a0360043581169060243516604435610365565b341561015f57600080fd5b61016a60043561048f565b005b341561017757600080fd5b61017f6105f8565b604051600160a060020a03909116815260200160405180910390f35b34156101a657600080fd5b61017f610607565b34156101b957600080fd5b6100f3600160a060020a0360043516602435610616565b34156101db57600080fd5b61011a600160a060020a0360043516610710565b34156101fa57600080fd5b61020261072b565b6040518082600481111561021257fe5b60ff16815260200191505060405180910390f35b341561023157600080fd5b6100f3610775565b341561024457600080fd5b6100f3600160a060020a036004351660243561077a565b341561026657600080fd5b61011a610850565b341561027957600080fd5b6100f3600160a060020a0360043516602435610856565b341561029b57600080fd5b61016a600160a060020a03600435166108fa565b34156102ba57600080fd5b61011a600160a060020a0360043581169060243516610ab1565b34156102df57600080fd5b61016a600160a060020a0360043516610adc565b600160a060020a03338116600081815260026020908152604080832094871680845294909152808220859055909291907f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259085905190815260200160405180910390a350600192915050565b60005481565b600080600160a060020a038416151561037d57600080fd5b50600160a060020a038085166000818152600260209081526040808320339095168352938152838220549282526001905291909120546103c3908463ffffffff610b7b16565b600160a060020a0380871660009081526001602052604080822093909355908616815220546103f8908463ffffffff610b8d16565b600160a060020a038516600090815260016020526040902055610421818463ffffffff610b7b16565b600160a060020a03808716600081815260026020908152604080832033861684529091529081902093909355908616917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9086905190815260200160405180910390a3506001949350505050565b600061049961072b565b905060038160048111156104a957fe5b14806104c0575060048160048111156104be57fe5b145b15156104cb57600080fd5b8115156104d757600080fd5b600160a060020a033316600090815260016020526040902054610500908363ffffffff610b7b16565b600160a060020a0333166000908152600160205260408120919091555461052d908363ffffffff610b7b16565b600055600554610543908363ffffffff610b8d16565b600555600454600160a060020a031663753e88e5338460405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b151561059c57600080fd5b6102c65a03f115156105ad57600080fd5b5050600454600160a060020a03908116915033167f7e5c344a8141a805725cb476f76c6953b842222b967edd1f78ddb6e8b3f397ac8460405190815260200160405180910390a35050565b600454600160a060020a031681565b600354600160a060020a031681565b600160a060020a0333811660009081526002602090815260408083209386168352929052908120548083111561067357600160a060020a0333811660009081526002602090815260408083209388168352929052908120556106aa565b610683818463ffffffff610b7b16565b600160a060020a033381166000908152600260209081526040808320938916835292905220555b600160a060020a0333811660008181526002602090815260408083209489168084529490915290819020547f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925915190815260200160405180910390a35060019392505050565b600160a060020a031660009081526001602052604090205490565b6000610735610775565b151561074357506001610772565b600454600160a060020a0316151561075d57506002610772565b600554151561076e57506003610772565b5060045b90565b600190565b6000600160a060020a038316151561079157600080fd5b600160a060020a0333166000908152600160205260409020546107ba908363ffffffff610b7b16565b600160a060020a0333811660009081526001602052604080822093909355908516815220546107ef908363ffffffff610b8d16565b600160a060020a0380851660008181526001602052604090819020939093559133909116907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a350600192915050565b60055481565b600160a060020a03338116600090815260026020908152604080832093861683529290529081205461088e908363ffffffff610b8d16565b600160a060020a0333811660008181526002602090815260408083209489168084529490915290819020849055919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92591905190815260200160405180910390a350600192915050565b610902610775565b151561090d57600080fd5b600160a060020a038116151561092257600080fd5b60035433600160a060020a0390811691161461093d57600080fd5b600461094761072b565b600481111561095257fe5b141561095d57600080fd5b6004805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a038381169190911791829055166361d3d7a66000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b15156109c857600080fd5b6102c65a03f115156109d957600080fd5b5050506040518051905015156109ee57600080fd5b600080546004549091600160a060020a0390911690634b2ba0dd90604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515610a3e57600080fd5b6102c65a03f11515610a4f57600080fd5b50505060405180519050141515610a6557600080fd5b6004547f7845d5aa74cc410e35571258d954f23b82276e160fe8c188fa80566580f279cc90600160a060020a0316604051600160a060020a03909116815260200160405180910390a150565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b600160a060020a0381161515610af157600080fd5b60035433600160a060020a03908116911614610b0c57600080fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290557f41215aff8c294dab52583f38146756951783ca3d8b887e22e03f4b276d02606c9116604051600160a060020a03909116815260200160405180910390a150565b600082821115610b8757fe5b50900390565b600082820183811015610b9c57fe5b93925050505600a165627a7a72305820c16f03af08cd7eceeb84a981d996634f6a6ebbf5e9de1cfefc867ce258cd97870029",
+  "deployedBytecode": "0x6060604052600436106100cc5763ffffffff60e060020a600035041663095ea7b381146100d157806318160ddd1461010757806323b872dd1461012c57806345977d03146101545780635de4ccb01461016c578063600440cb1461019b57806366188463146101ae57806370a08231146101d05780638444b391146101ef5780639738968c14610226578063a9059cbb14610239578063c752ff621461025b578063d73dd6231461026e578063d7e7088a14610290578063dd62ed3e146102af578063ffeb7d75146102d4575b600080fd5b34156100dc57600080fd5b6100f3600160a060020a03600435166024356102f3565b604051901515815260200160405180910390f35b341561011257600080fd5b61011a61035f565b60405190815260200160405180910390f35b341561013757600080fd5b6100f3600160a060020a0360043581169060243516604435610365565b341561015f57600080fd5b61016a60043561048f565b005b341561017757600080fd5b61017f6105f8565b604051600160a060020a03909116815260200160405180910390f35b34156101a657600080fd5b61017f610607565b34156101b957600080fd5b6100f3600160a060020a0360043516602435610616565b34156101db57600080fd5b61011a600160a060020a0360043516610710565b34156101fa57600080fd5b61020261072b565b6040518082600481111561021257fe5b60ff16815260200191505060405180910390f35b341561023157600080fd5b6100f3610775565b341561024457600080fd5b6100f3600160a060020a036004351660243561077a565b341561026657600080fd5b61011a610850565b341561027957600080fd5b6100f3600160a060020a0360043516602435610856565b341561029b57600080fd5b61016a600160a060020a03600435166108fa565b34156102ba57600080fd5b61011a600160a060020a0360043581169060243516610ab1565b34156102df57600080fd5b61016a600160a060020a0360043516610adc565b600160a060020a03338116600081815260026020908152604080832094871680845294909152808220859055909291907f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259085905190815260200160405180910390a350600192915050565b60005481565b600080600160a060020a038416151561037d57600080fd5b50600160a060020a038085166000818152600260209081526040808320339095168352938152838220549282526001905291909120546103c3908463ffffffff610b7b16565b600160a060020a0380871660009081526001602052604080822093909355908616815220546103f8908463ffffffff610b8d16565b600160a060020a038516600090815260016020526040902055610421818463ffffffff610b7b16565b600160a060020a03808716600081815260026020908152604080832033861684529091529081902093909355908616917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9086905190815260200160405180910390a3506001949350505050565b600061049961072b565b905060038160048111156104a957fe5b14806104c0575060048160048111156104be57fe5b145b15156104cb57600080fd5b8115156104d757600080fd5b600160a060020a033316600090815260016020526040902054610500908363ffffffff610b7b16565b600160a060020a0333166000908152600160205260408120919091555461052d908363ffffffff610b7b16565b600055600554610543908363ffffffff610b8d16565b600555600454600160a060020a031663753e88e5338460405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b151561059c57600080fd5b6102c65a03f115156105ad57600080fd5b5050600454600160a060020a03908116915033167f7e5c344a8141a805725cb476f76c6953b842222b967edd1f78ddb6e8b3f397ac8460405190815260200160405180910390a35050565b600454600160a060020a031681565b600354600160a060020a031681565b600160a060020a0333811660009081526002602090815260408083209386168352929052908120548083111561067357600160a060020a0333811660009081526002602090815260408083209388168352929052908120556106aa565b610683818463ffffffff610b7b16565b600160a060020a033381166000908152600260209081526040808320938916835292905220555b600160a060020a0333811660008181526002602090815260408083209489168084529490915290819020547f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925915190815260200160405180910390a35060019392505050565b600160a060020a031660009081526001602052604090205490565b6000610735610775565b151561074357506001610772565b600454600160a060020a0316151561075d57506002610772565b600554151561076e57506003610772565b5060045b90565b600190565b6000600160a060020a038316151561079157600080fd5b600160a060020a0333166000908152600160205260409020546107ba908363ffffffff610b7b16565b600160a060020a0333811660009081526001602052604080822093909355908516815220546107ef908363ffffffff610b8d16565b600160a060020a0380851660008181526001602052604090819020939093559133909116907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a350600192915050565b60055481565b600160a060020a03338116600090815260026020908152604080832093861683529290529081205461088e908363ffffffff610b8d16565b600160a060020a0333811660008181526002602090815260408083209489168084529490915290819020849055919290917f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b92591905190815260200160405180910390a350600192915050565b610902610775565b151561090d57600080fd5b600160a060020a038116151561092257600080fd5b60035433600160a060020a0390811691161461093d57600080fd5b600461094761072b565b600481111561095257fe5b141561095d57600080fd5b6004805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a038381169190911791829055166361d3d7a66000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b15156109c857600080fd5b6102c65a03f115156109d957600080fd5b5050506040518051905015156109ee57600080fd5b600080546004549091600160a060020a0390911690634b2ba0dd90604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515610a3e57600080fd5b6102c65a03f11515610a4f57600080fd5b50505060405180519050141515610a6557600080fd5b6004547f7845d5aa74cc410e35571258d954f23b82276e160fe8c188fa80566580f279cc90600160a060020a0316604051600160a060020a03909116815260200160405180910390a150565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b600160a060020a0381161515610af157600080fd5b60035433600160a060020a03908116911614610b0c57600080fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290557f41215aff8c294dab52583f38146756951783ca3d8b887e22e03f4b276d02606c9116604051600160a060020a03909116815260200160405180910390a150565b600082821115610b8757fe5b50900390565b600082820183811015610b9c57fe5b93925050505600a165627a7a72305820c16f03af08cd7eceeb84a981d996634f6a6ebbf5e9de1cfefc867ce258cd97870029",
+  "sourceMap": "352:3517:3:-;;;1562:135;;;;;;;;;;;;;;;;;;;;;;1625:13;:30;;-1:-1:-1;;;;;;1625:30:3;-1:-1:-1;;;;;1625:30:3;;;;;;;;;;;;;-1:-1:-1;1661:31:3;;-1:-1:-1;1678:13:3;1661:31;;-1:-1:-1;;;;;1661:31:3;;;;;;;;;;;;;;1562:135;352:3517;;;;;;",
+  "deployedSourceMap": "352:3517:3:-;;;;;;;;;-1:-1:-1;;;352:3517:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2777:183:0;;;;;;;;;;-1:-1:-1;;;;;2777:183:0;;;;;;;;;;;;;;;;;;;;;;;;135:26:4;;;;;;;;;;;;;;;;;;;;;;;;;;;1621:533:0;;;;;;;;;;-1:-1:-1;;;;;1621:533:0;;;;;;;;;;;;1792:555:3;;;;;;;;;;;;;;;;579:32;;;;;;;;;;;;;;;-1:-1:-1;;;;;579:32:3;;;;;;;;;;;;;;484:28;;;;;;;;;;;;3935:413:0;;;;;;;;;;-1:-1:-1;;;;;3935:413:0;;;;;;;743:111;;;;;;;;;;-1:-1:-1;;;;;743:111:0;;;;;3030:359:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3797:70;;;;;;;;;;;;1012:334:0;;;;;;;;;;-1:-1:-1;;;;;1012:334:0;;;;;;;666:28:3;;;;;;;;;;;;3659:272:0;;;;;;;;;;-1:-1:-1;;;;;3659:272:0;;;;;;;2402:571:3;;;;;;;;;;-1:-1:-1;;;;;2402:571:3;;;;;3279:140:0;;;;;;;;;;-1:-1:-1;;;;;3279:140:0;;;;;;;;;;3508:189:3;;;;;;;;;;-1:-1:-1;;;;;3508:189:3;;;;;2777:183:0;-1:-1:-1;;;;;2864:10:0;2856:19;;2844:4;2856:19;;;:7;:19;;;;;;;;:29;;;;;;;;;;;;;:38;;;2844:4;;2856:29;:19;2900:38;;2888:6;;2900:38;;;;;;;;;;;;;-1:-1:-1;2951:4:0;2777:183;;;;:::o;135:26:4:-;;;;:::o;1621:533:0:-;1703:4;;-1:-1:-1;;;;;1723:17:0;;;;1715:26;;;;;;-1:-1:-1;;;;;;1769:14:0;;;;;;;:7;:14;;;;;;;;1784:10;1769:26;;;;;;;;;;;;1967:15;;;:8;:15;;;;;;;:27;;1987:6;1967:27;:19;:27;:::i;:::-;-1:-1:-1;;;;;1949:15:0;;;;;;;:8;:15;;;;;;:45;;;;2016:13;;;;;;;:25;;2034:6;2016:25;:17;:25;:::i;:::-;-1:-1:-1;;;;;2000:13:0;;;;;;:8;:13;;;;;:41;2076:22;:10;2091:6;2076:22;:14;:22;:::i;:::-;-1:-1:-1;;;;;2047:14:0;;;;;;;:7;:14;;;;;;;;2062:10;2047:26;;;;;;;;;;;:51;;;;2104:28;;;;;;2125:6;;2104:28;;;;;;;;;;;;;-1:-1:-1;2145:4:0;;1621:533;-1:-1:-1;;;;1621:533:0:o;1792:555:3:-;1837:18;1858:17;:15;:17::i;:::-;1837:38;-1:-1:-1;1898:27:3;1889:5;:36;;;;;;;;;:71;;;-1:-1:-1;1938:22:3;1929:5;:31;;;;;;;;;1889:71;1881:80;;;;;;;;2004:10;;;1996:19;;;;;;-1:-1:-1;;;;;2054:10:3;2045:20;;;;;:8;:20;;;;;;:31;;2070:5;2045:31;:24;:31;:::i;:::-;-1:-1:-1;;;;;2031:10:3;2022:20;;;;;:8;:20;;;;;:54;;;;2137:11;:22;;2153:5;2137:22;:15;:22;:::i;:::-;2123:11;:36;2181:13;;:24;;2199:5;2181:24;:17;:24;:::i;:::-;2165:13;:40;2253:12;;-1:-1:-1;;;;;2253:12:3;:24;2278:10;2290:5;2253:43;;-1:-1:-1;;;2253:43:3;;;;;;-1:-1:-1;;;;;2253:43:3;;;;;;;;;;;;;-1:-1:-1;2253:43:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;2322:12:3;;-1:-1:-1;;;;;2322:12:3;;;;-1:-1:-1;2310:10:3;2302:40;;2336:5;2302:40;;;;;;;;;;;;;;1792:555;;:::o;579:32::-;;;-1:-1:-1;;;;;579:32:3;;:::o;484:28::-;;;-1:-1:-1;;;;;484:28:3;;:::o;3935:413:0:-;-1:-1:-1;;;;;4069:10:0;4061:19;;4023:12;4061:19;;;:7;:19;;;;;;;;:29;;;;;;;;;;;;4100:27;;;4096:164;;;-1:-1:-1;;;;;4145:10:0;4137:19;;4169:1;4137:19;;;:7;:19;;;;;;;;:29;;;;;;;;;;;:33;4096:164;;;4223:30;:8;4236:16;4223:30;:12;:30;:::i;:::-;-1:-1:-1;;;;;4199:10:0;4191:19;;;;;;:7;:19;;;;;;;;:29;;;;;;;;;:62;4096:164;-1:-1:-1;;;;;4274:10:0;4265:61;;4296:19;;;;:7;:19;;;;;;;;4265:61;;;4296:29;;;;;;;;;;;;4265:61;;;;;;;;;;;;;;;-1:-1:-1;4339:4:0;;3935:413;-1:-1:-1;;;3935:413:0:o;743:111::-;-1:-1:-1;;;;;833:16:0;803:15;833:16;;;:8;:16;;;;;;;743:111::o;3030:359:3:-;3081:12;3106;:10;:12::i;:::-;3105:13;3101:284;;;-1:-1:-1;3135:23:3;3128:30;;3101:284;3183:12;;-1:-1:-1;;;;;3183:12:3;3175:29;3171:214;;;-1:-1:-1;3221:28:3;3214:35;;3171:214;3266:13;;:18;3262:123;;;-1:-1:-1;3301:27:3;3294:34;;3262:123;-1:-1:-1;3356:22:3;3262:123;3030:359;:::o;3797:70::-;3858:4;3797:70;:::o;1012:334:0:-;1075:4;-1:-1:-1;;;;;1095:17:0;;;;1087:26;;;;;;-1:-1:-1;;;;;1215:10:0;1206:20;;;;;:8;:20;;;;;;:32;;1231:6;1206:32;:24;:32;:::i;:::-;-1:-1:-1;;;;;1192:10:0;1183:20;;;;;;:8;:20;;;;;;:55;;;;1260:13;;;;;;;:25;;1278:6;1260:25;:17;:25;:::i;:::-;-1:-1:-1;;;;;1244:13:0;;;;;;;:8;:13;;;;;;;:41;;;;:13;1300:10;1291:33;;;;;;1317:6;;1291:33;;;;;;;;;;;;;-1:-1:-1;1337:4:0;1012:334;;;;:::o;666:28:3:-;;;;:::o;3659:272:0:-;-1:-1:-1;;;;;3804:10:0;3796:19;;3742:12;3796:19;;;:7;:19;;;;;;;;:29;;;;;;;;;;;;:46;;3830:11;3796:46;:33;:46;:::i;:::-;-1:-1:-1;;;;;3772:10:0;3764:19;;;;;;:7;:19;;;;;;;;:29;;;;;;;;;;;;;;:78;;;:29;;:19;;3848:61;;3764:78;3848:61;;;;;;;;;;;;;-1:-1:-1;3922:4:0;3659:272;;;;:::o;2402:571:3:-;2465:12;:10;:12::i;:::-;2457:21;;;;;;;;-1:-1:-1;;;;;2493:12:3;;;;2485:21;;;;;;2584:13;;2570:10;-1:-1:-1;;;;;2570:27:3;;;2584:13;;2570:27;2562:36;;;;;;2679:22;2658:17;:15;:17::i;:::-;:43;;;;;;;;;;2650:52;;;;;;2709:12;:34;;-1:-1:-1;;2709:34:3;-1:-1:-1;;;;;2709:34:3;;;;;;;;;;;2779:12;:27;-1:-1:-1;2779:29:3;;;;;;;;;;-1:-1:-1;;;2779:29:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2771:38;;;;;;;;2920:11;;;2887:12;;2920:11;;-1:-1:-1;;;;;2887:12:3;;;;:27;;:29;;;;;;;;;;-1:-1:-1;;;2887:29:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:44;2879:53;;;;;;;;2955:12;;2939:29;;-1:-1:-1;;;;;2955:12:3;2939:29;;-1:-1:-1;;;;;2939:29:3;;;;;;;;;;;;;;2402:571;:::o;3279:140:0:-;-1:-1:-1;;;;;3389:15:0;;;3357:17;3389:15;;;:7;:15;;;;;;;;:25;;;;;;;;;;;;;3279:140::o;3508:189:3:-;-1:-1:-1;;;;;3571:13:3;;;;3563:22;;;;;;3613:13;;3599:10;-1:-1:-1;;;;;3599:27:3;;;3613:13;;3599:27;3591:36;;;;;;3633:13;:22;;-1:-1:-1;;3633:22:3;-1:-1:-1;;;;;3633:22:3;;;;;;;;;;;3661:31;;3678:13;3661:31;;-1:-1:-1;;;;;3661:31:3;;;;;;;;;;;;;;3508:189;:::o;554:110:8:-;612:7;634:6;;;;627:14;;;;-1:-1:-1;654:5:8;;;554:110::o;668:129::-;726:7;753:5;;;771:6;;;;764:14;;;;791:1;668:129;-1:-1:-1;;;668:129:8:o",
+  "source": "pragma solidity ^0.4.18;\n\nimport { ERC20Token } from './ERC20Token.sol';\nimport { SafeMath } from './utils/SafeMath.sol';\nimport { UpgradeAgent } from './interfaces/UpgradeAgent.sol';\n\n\n/**\n * A token upgrade mechanism where users can opt-in amount of tokens to the next smart contract revision.\n *\n * First envisioned by Golem and Lunyr projects.\n */\ncontract UpgradeableToken is ERC20Token {\n  using SafeMath for uint256;\n\n  /** Contract / person who can set the upgrade path. */\n  address public upgradeMaster;\n\n  /** The next contract where the tokens will be migrated. */\n  UpgradeAgent public upgradeAgent;\n\n  /** How many tokens we have upgraded by now. */\n  uint256 public totalUpgraded;\n\n  /**\n   * Upgrade states.\n   *\n   * - NotAllowed: The child contract has not reached a condition where the upgrade can bgun\n   * - WaitingForAgent: Token allows upgrade, but we don't have a new agent yet\n   * - ReadyToUpgrade: The agent is set, but not a single token has been upgraded yet\n   * - Upgrading: Upgrade agent is set and the balance holders can upgrade their tokens\n   *\n   */\n  enum UpgradeState {Unknown, NotAllowed, WaitingForAgent, ReadyToUpgrade, Upgrading}\n\n  /**\n   * Somebody has upgraded some of his tokens.\n   */\n  event Upgrade(address indexed _from, address indexed _to, uint256 _value);\n\n  /**\n   * New upgrade agent available.\n   */\n  event UpgradeAgentSet(address agent);\n\n  /**\n   * Upgrade master updated.\n   */\n  event NewUpgradeMaster(address upgradeMaster);\n\n  /**\n   * Do not allow construction without upgrade master set.\n   */\n  function UpgradeableToken(address _upgradeMaster) public {\n    upgradeMaster = _upgradeMaster;\n    NewUpgradeMaster(upgradeMaster);\n  }\n\n  /**\n   * Allow the token holder to upgrade some of their tokens to a new contract.\n   */\n  function upgrade(uint256 value) public {\n    UpgradeState state = getUpgradeState();\n    require(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading);\n    // Validate input value.\n    require(value != 0);\n\n    balances[msg.sender] = balances[msg.sender].sub(value);\n\n    // Take tokens out from circulation\n    totalSupply = totalSupply.sub(value);\n    totalUpgraded = totalUpgraded.add(value);\n\n    // Upgrade agent reissues the tokens\n    upgradeAgent.upgradeFrom(msg.sender, value);\n    Upgrade(msg.sender, upgradeAgent, value);\n  }\n\n  /**\n   * Set an upgrade agent that handles\n   */\n  function setUpgradeAgent(address agent) external {\n    require(canUpgrade());\n\n    require(agent != 0x0);\n    // Only a master can designate the next agent\n    require(msg.sender == upgradeMaster);\n    // Upgrade has already begun for an agent\n    require(getUpgradeState() != UpgradeState.Upgrading);\n\n    upgradeAgent = UpgradeAgent(agent);\n\n    // Bad interface\n    require(upgradeAgent.isUpgradeAgent());\n    // Make sure that token supplies match in source and target\n    require(upgradeAgent.originalSupply() == totalSupply);\n\n    UpgradeAgentSet(upgradeAgent);\n  }\n\n  /**\n   * Get the state of the token upgrade.\n   */\n  function getUpgradeState() public constant returns(UpgradeState) {\n    if (!canUpgrade()) {\n      return UpgradeState.NotAllowed;\n    } else if (address(upgradeAgent) == 0x00) {\n      return UpgradeState.WaitingForAgent;\n    } else if (totalUpgraded == 0) {\n      return UpgradeState.ReadyToUpgrade;\n    } else {\n      return UpgradeState.Upgrading;\n    }\n  }\n\n  /**\n   * Change the upgrade master.\n   *\n   * This allows us to set a new owner for the upgrade mechanism.\n   */\n  function setUpgradeMaster(address master) public {\n    require(master != 0x0);\n    require(msg.sender == upgradeMaster);\n    upgradeMaster = master;\n    NewUpgradeMaster(upgradeMaster);\n  }\n\n  /**\n   * Child contract can enable to provide the condition when the upgrade can begun.\n   */\n  function canUpgrade() public pure returns(bool) {\n    return true;\n  }\n}\n",
+  "sourcePath": "/Users/diegobarahona/Documents/Projects/Knowleadge/knowledge-contracts/contracts/UpgradableToken.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowleadge/knowledge-contracts/contracts/UpgradableToken.sol",
+      "exportedSymbols": {
+        "UpgradeableToken": [
+          749
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 497,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 301,
+          "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowleadge/knowledge-contracts/contracts/ERC20Token.sol",
+          "file": "./ERC20Token.sol",
+          "scope": 750,
+          "symbolAliases": [
+            {
+              "foreign": 498,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 499,
+        "name": "ImportDirective",
+        "src": "26:46:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1028,
+          "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowleadge/knowledge-contracts/contracts/utils/SafeMath.sol",
+          "file": "./utils/SafeMath.sol",
+          "scope": 750,
+          "symbolAliases": [
+            {
+              "foreign": 500,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 501,
+        "name": "ImportDirective",
+        "src": "73:48:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 836,
+          "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowleadge/knowledge-contracts/contracts/interfaces/UpgradeAgent.sol",
+          "file": "./interfaces/UpgradeAgent.sol",
+          "scope": 750,
+          "symbolAliases": [
+            {
+              "foreign": 502,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 503,
+        "name": "ImportDirective",
+        "src": "122:61:3"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            300,
+            815
+          ],
+          "contractKind": "contract",
+          "documentation": "A token upgrade mechanism where users can opt-in amount of tokens to the next smart contract revision.\n * First envisioned by Golem and Lunyr projects.",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            749,
+            300,
+            815
+          ],
+          "name": "UpgradeableToken",
+          "scope": 750
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": [
+                null
+              ]
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ERC20Token",
+                  "referencedDeclaration": 300,
+                  "type": "contract ERC20Token"
+                },
+                "id": 504,
+                "name": "UserDefinedTypeName",
+                "src": "381:10:3"
+              }
+            ],
+            "id": 505,
+            "name": "InheritanceSpecifier",
+            "src": "381:10:3"
+          },
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SafeMath",
+                  "referencedDeclaration": 1027,
+                  "type": "library SafeMath"
+                },
+                "id": 506,
+                "name": "UserDefinedTypeName",
+                "src": "402:8:3"
+              },
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 507,
+                "name": "ElementaryTypeName",
+                "src": "415:7:3"
+              }
+            ],
+            "id": 508,
+            "name": "UsingForDirective",
+            "src": "396:27:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "upgradeMaster",
+              "scope": 749,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 509,
+                "name": "ElementaryTypeName",
+                "src": "484:7:3"
+              }
+            ],
+            "id": 510,
+            "name": "VariableDeclaration",
+            "src": "484:28:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "upgradeAgent",
+              "scope": 749,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract UpgradeAgent",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "UpgradeAgent",
+                  "referencedDeclaration": 835,
+                  "type": "contract UpgradeAgent"
+                },
+                "id": 511,
+                "name": "UserDefinedTypeName",
+                "src": "579:12:3"
+              }
+            ],
+            "id": 512,
+            "name": "VariableDeclaration",
+            "src": "579:32:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "totalUpgraded",
+              "scope": 749,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 513,
+                "name": "ElementaryTypeName",
+                "src": "666:7:3"
+              }
+            ],
+            "id": 514,
+            "name": "VariableDeclaration",
+            "src": "666:28:3"
+          },
+          {
+            "attributes": {
+              "canonicalName": "UpgradeableToken.UpgradeState",
+              "name": "UpgradeState"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Unknown"
+                },
+                "id": 515,
+                "name": "EnumValue",
+                "src": "1108:7:3"
+              },
+              {
+                "attributes": {
+                  "name": "NotAllowed"
+                },
+                "id": 516,
+                "name": "EnumValue",
+                "src": "1117:10:3"
+              },
+              {
+                "attributes": {
+                  "name": "WaitingForAgent"
+                },
+                "id": 517,
+                "name": "EnumValue",
+                "src": "1129:15:3"
+              },
+              {
+                "attributes": {
+                  "name": "ReadyToUpgrade"
+                },
+                "id": 518,
+                "name": "EnumValue",
+                "src": "1146:14:3"
+              },
+              {
+                "attributes": {
+                  "name": "Upgrading"
+                },
+                "id": 519,
+                "name": "EnumValue",
+                "src": "1162:9:3"
+              }
+            ],
+            "id": 520,
+            "name": "EnumDefinition",
+            "src": "1089:83:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Upgrade"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "_from",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 521,
+                        "name": "ElementaryTypeName",
+                        "src": "1249:7:3"
+                      }
+                    ],
+                    "id": 522,
+                    "name": "VariableDeclaration",
+                    "src": "1249:21:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "_to",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 523,
+                        "name": "ElementaryTypeName",
+                        "src": "1272:7:3"
+                      }
+                    ],
+                    "id": 524,
+                    "name": "VariableDeclaration",
+                    "src": "1272:19:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_value",
+                      "scope": 528,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 525,
+                        "name": "ElementaryTypeName",
+                        "src": "1293:7:3"
+                      }
+                    ],
+                    "id": 526,
+                    "name": "VariableDeclaration",
+                    "src": "1293:14:3"
+                  }
+                ],
+                "id": 527,
+                "name": "ParameterList",
+                "src": "1248:60:3"
+              }
+            ],
+            "id": 528,
+            "name": "EventDefinition",
+            "src": "1235:74:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "UpgradeAgentSet"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "agent",
+                      "scope": 532,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 529,
+                        "name": "ElementaryTypeName",
+                        "src": "1381:7:3"
+                      }
+                    ],
+                    "id": 530,
+                    "name": "VariableDeclaration",
+                    "src": "1381:13:3"
+                  }
+                ],
+                "id": 531,
+                "name": "ParameterList",
+                "src": "1380:15:3"
+              }
+            ],
+            "id": 532,
+            "name": "EventDefinition",
+            "src": "1359:37:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "NewUpgradeMaster"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "upgradeMaster",
+                      "scope": 536,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 533,
+                        "name": "ElementaryTypeName",
+                        "src": "1464:7:3"
+                      }
+                    ],
+                    "id": 534,
+                    "name": "VariableDeclaration",
+                    "src": "1464:21:3"
+                  }
+                ],
+                "id": 535,
+                "name": "ParameterList",
+                "src": "1463:23:3"
+              }
+            ],
+            "id": 536,
+            "name": "EventDefinition",
+            "src": "1441:46:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "UpgradeableToken",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_upgradeMaster",
+                      "scope": 550,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 537,
+                        "name": "ElementaryTypeName",
+                        "src": "1588:7:3"
+                      }
+                    ],
+                    "id": 538,
+                    "name": "VariableDeclaration",
+                    "src": "1588:22:3"
+                  }
+                ],
+                "id": 539,
+                "name": "ParameterList",
+                "src": "1587:24:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 540,
+                "name": "ParameterList",
+                "src": "1619:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 510,
+                              "type": "address",
+                              "value": "upgradeMaster"
+                            },
+                            "id": 541,
+                            "name": "Identifier",
+                            "src": "1625:13:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 538,
+                              "type": "address",
+                              "value": "_upgradeMaster"
+                            },
+                            "id": 542,
+                            "name": "Identifier",
+                            "src": "1641:14:3"
+                          }
+                        ],
+                        "id": 543,
+                        "name": "Assignment",
+                        "src": "1625:30:3"
+                      }
+                    ],
+                    "id": 544,
+                    "name": "ExpressionStatement",
+                    "src": "1625:30:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 536,
+                              "type": "function (address)",
+                              "value": "NewUpgradeMaster"
+                            },
+                            "id": 545,
+                            "name": "Identifier",
+                            "src": "1661:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 510,
+                              "type": "address",
+                              "value": "upgradeMaster"
+                            },
+                            "id": 546,
+                            "name": "Identifier",
+                            "src": "1678:13:3"
+                          }
+                        ],
+                        "id": 547,
+                        "name": "FunctionCall",
+                        "src": "1661:31:3"
+                      }
+                    ],
+                    "id": 548,
+                    "name": "ExpressionStatement",
+                    "src": "1661:31:3"
+                  }
+                ],
+                "id": 549,
+                "name": "Block",
+                "src": "1619:78:3"
+              }
+            ],
+            "id": 550,
+            "name": "FunctionDefinition",
+            "src": "1562:135:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "upgrade",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "value",
+                      "scope": 621,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 551,
+                        "name": "ElementaryTypeName",
+                        "src": "1809:7:3"
+                      }
+                    ],
+                    "id": 552,
+                    "name": "VariableDeclaration",
+                    "src": "1809:13:3"
+                  }
+                ],
+                "id": 553,
+                "name": "ParameterList",
+                "src": "1808:15:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 554,
+                "name": "ParameterList",
+                "src": "1831:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        556
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "state",
+                          "scope": 621,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "enum UpgradeableToken.UpgradeState",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "UpgradeState",
+                              "referencedDeclaration": 520,
+                              "type": "enum UpgradeableToken.UpgradeState"
+                            },
+                            "id": 555,
+                            "name": "UserDefinedTypeName",
+                            "src": "1837:12:3"
+                          }
+                        ],
+                        "id": 556,
+                        "name": "VariableDeclaration",
+                        "src": "1837:18:3"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "enum UpgradeableToken.UpgradeState",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 713,
+                              "type": "function () view returns (enum UpgradeableToken.UpgradeState)",
+                              "value": "getUpgradeState"
+                            },
+                            "id": 557,
+                            "name": "Identifier",
+                            "src": "1858:15:3"
+                          }
+                        ],
+                        "id": 558,
+                        "name": "FunctionCall",
+                        "src": "1858:17:3"
+                      }
+                    ],
+                    "id": 559,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1837:38:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 560,
+                            "name": "Identifier",
+                            "src": "1881:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "||",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_enum$_UpgradeState_$520",
+                                    "typeString": "enum UpgradeableToken.UpgradeState"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "==",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 556,
+                                      "type": "enum UpgradeableToken.UpgradeState",
+                                      "value": "state"
+                                    },
+                                    "id": 561,
+                                    "name": "Identifier",
+                                    "src": "1889:5:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "member_name": "ReadyToUpgrade",
+                                      "referencedDeclaration": null,
+                                      "type": "enum UpgradeableToken.UpgradeState"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 520,
+                                          "type": "type(enum UpgradeableToken.UpgradeState)",
+                                          "value": "UpgradeState"
+                                        },
+                                        "id": 562,
+                                        "name": "Identifier",
+                                        "src": "1898:12:3"
+                                      }
+                                    ],
+                                    "id": 563,
+                                    "name": "MemberAccess",
+                                    "src": "1898:27:3"
+                                  }
+                                ],
+                                "id": 564,
+                                "name": "BinaryOperation",
+                                "src": "1889:36:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_enum$_UpgradeState_$520",
+                                    "typeString": "enum UpgradeableToken.UpgradeState"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "==",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 556,
+                                      "type": "enum UpgradeableToken.UpgradeState",
+                                      "value": "state"
+                                    },
+                                    "id": 565,
+                                    "name": "Identifier",
+                                    "src": "1929:5:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "member_name": "Upgrading",
+                                      "referencedDeclaration": null,
+                                      "type": "enum UpgradeableToken.UpgradeState"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 520,
+                                          "type": "type(enum UpgradeableToken.UpgradeState)",
+                                          "value": "UpgradeState"
+                                        },
+                                        "id": 566,
+                                        "name": "Identifier",
+                                        "src": "1938:12:3"
+                                      }
+                                    ],
+                                    "id": 567,
+                                    "name": "MemberAccess",
+                                    "src": "1938:22:3"
+                                  }
+                                ],
+                                "id": 568,
+                                "name": "BinaryOperation",
+                                "src": "1929:31:3"
+                              }
+                            ],
+                            "id": 569,
+                            "name": "BinaryOperation",
+                            "src": "1889:71:3"
+                          }
+                        ],
+                        "id": 570,
+                        "name": "FunctionCall",
+                        "src": "1881:80:3"
+                      }
+                    ],
+                    "id": 571,
+                    "name": "ExpressionStatement",
+                    "src": "1881:80:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 572,
+                            "name": "Identifier",
+                            "src": "1996:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 552,
+                                  "type": "uint256",
+                                  "value": "value"
+                                },
+                                "id": 573,
+                                "name": "Identifier",
+                                "src": "2004:5:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 574,
+                                "name": "Literal",
+                                "src": "2013:1:3"
+                              }
+                            ],
+                            "id": 575,
+                            "name": "BinaryOperation",
+                            "src": "2004:10:3"
+                          }
+                        ],
+                        "id": 576,
+                        "name": "FunctionCall",
+                        "src": "1996:19:3"
+                      }
+                    ],
+                    "id": 577,
+                    "name": "ExpressionStatement",
+                    "src": "1996:19:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "mapping(address => uint256)",
+                                  "value": "balances"
+                                },
+                                "id": 578,
+                                "name": "Identifier",
+                                "src": "2022:8:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1039,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 579,
+                                    "name": "Identifier",
+                                    "src": "2031:3:3"
+                                  }
+                                ],
+                                "id": 580,
+                                "name": "MemberAccess",
+                                "src": "2031:10:3"
+                              }
+                            ],
+                            "id": 581,
+                            "name": "IndexAccess",
+                            "src": "2022:20:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sub",
+                                  "referencedDeclaration": 1002,
+                                  "type": "function (uint256,uint256) pure returns (uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 14,
+                                          "type": "mapping(address => uint256)",
+                                          "value": "balances"
+                                        },
+                                        "id": 582,
+                                        "name": "Identifier",
+                                        "src": "2045:8:3"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "sender",
+                                          "referencedDeclaration": null,
+                                          "type": "address"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 1039,
+                                              "type": "msg",
+                                              "value": "msg"
+                                            },
+                                            "id": 583,
+                                            "name": "Identifier",
+                                            "src": "2054:3:3"
+                                          }
+                                        ],
+                                        "id": 584,
+                                        "name": "MemberAccess",
+                                        "src": "2054:10:3"
+                                      }
+                                    ],
+                                    "id": 585,
+                                    "name": "IndexAccess",
+                                    "src": "2045:20:3"
+                                  }
+                                ],
+                                "id": 586,
+                                "name": "MemberAccess",
+                                "src": "2045:24:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 552,
+                                  "type": "uint256",
+                                  "value": "value"
+                                },
+                                "id": 587,
+                                "name": "Identifier",
+                                "src": "2070:5:3"
+                              }
+                            ],
+                            "id": 588,
+                            "name": "FunctionCall",
+                            "src": "2045:31:3"
+                          }
+                        ],
+                        "id": 589,
+                        "name": "Assignment",
+                        "src": "2022:54:3"
+                      }
+                    ],
+                    "id": 590,
+                    "name": "ExpressionStatement",
+                    "src": "2022:54:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 753,
+                              "type": "uint256",
+                              "value": "totalSupply"
+                            },
+                            "id": 591,
+                            "name": "Identifier",
+                            "src": "2123:11:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sub",
+                                  "referencedDeclaration": 1002,
+                                  "type": "function (uint256,uint256) pure returns (uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 753,
+                                      "type": "uint256",
+                                      "value": "totalSupply"
+                                    },
+                                    "id": 592,
+                                    "name": "Identifier",
+                                    "src": "2137:11:3"
+                                  }
+                                ],
+                                "id": 593,
+                                "name": "MemberAccess",
+                                "src": "2137:15:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 552,
+                                  "type": "uint256",
+                                  "value": "value"
+                                },
+                                "id": 594,
+                                "name": "Identifier",
+                                "src": "2153:5:3"
+                              }
+                            ],
+                            "id": 595,
+                            "name": "FunctionCall",
+                            "src": "2137:22:3"
+                          }
+                        ],
+                        "id": 596,
+                        "name": "Assignment",
+                        "src": "2123:36:3"
+                      }
+                    ],
+                    "id": 597,
+                    "name": "ExpressionStatement",
+                    "src": "2123:36:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 514,
+                              "type": "uint256",
+                              "value": "totalUpgraded"
+                            },
+                            "id": 598,
+                            "name": "Identifier",
+                            "src": "2165:13:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "add",
+                                  "referencedDeclaration": 1026,
+                                  "type": "function (uint256,uint256) pure returns (uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 514,
+                                      "type": "uint256",
+                                      "value": "totalUpgraded"
+                                    },
+                                    "id": 599,
+                                    "name": "Identifier",
+                                    "src": "2181:13:3"
+                                  }
+                                ],
+                                "id": 600,
+                                "name": "MemberAccess",
+                                "src": "2181:17:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 552,
+                                  "type": "uint256",
+                                  "value": "value"
+                                },
+                                "id": 601,
+                                "name": "Identifier",
+                                "src": "2199:5:3"
+                              }
+                            ],
+                            "id": 602,
+                            "name": "FunctionCall",
+                            "src": "2181:24:3"
+                          }
+                        ],
+                        "id": 603,
+                        "name": "Assignment",
+                        "src": "2165:40:3"
+                      }
+                    ],
+                    "id": 604,
+                    "name": "ExpressionStatement",
+                    "src": "2165:40:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "upgradeFrom",
+                              "referencedDeclaration": 834,
+                              "type": "function (address,uint256) external"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 512,
+                                  "type": "contract UpgradeAgent",
+                                  "value": "upgradeAgent"
+                                },
+                                "id": 605,
+                                "name": "Identifier",
+                                "src": "2253:12:3"
+                              }
+                            ],
+                            "id": 607,
+                            "name": "MemberAccess",
+                            "src": "2253:24:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1039,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 608,
+                                "name": "Identifier",
+                                "src": "2278:3:3"
+                              }
+                            ],
+                            "id": 609,
+                            "name": "MemberAccess",
+                            "src": "2278:10:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 552,
+                              "type": "uint256",
+                              "value": "value"
+                            },
+                            "id": 610,
+                            "name": "Identifier",
+                            "src": "2290:5:3"
+                          }
+                        ],
+                        "id": 611,
+                        "name": "FunctionCall",
+                        "src": "2253:43:3"
+                      }
+                    ],
+                    "id": 612,
+                    "name": "ExpressionStatement",
+                    "src": "2253:43:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_contract$_UpgradeAgent_$835",
+                                  "typeString": "contract UpgradeAgent"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 528,
+                              "type": "function (address,address,uint256)",
+                              "value": "Upgrade"
+                            },
+                            "id": 613,
+                            "name": "Identifier",
+                            "src": "2302:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1039,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 614,
+                                "name": "Identifier",
+                                "src": "2310:3:3"
+                              }
+                            ],
+                            "id": 615,
+                            "name": "MemberAccess",
+                            "src": "2310:10:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 512,
+                              "type": "contract UpgradeAgent",
+                              "value": "upgradeAgent"
+                            },
+                            "id": 616,
+                            "name": "Identifier",
+                            "src": "2322:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 552,
+                              "type": "uint256",
+                              "value": "value"
+                            },
+                            "id": 617,
+                            "name": "Identifier",
+                            "src": "2336:5:3"
+                          }
+                        ],
+                        "id": 618,
+                        "name": "FunctionCall",
+                        "src": "2302:40:3"
+                      }
+                    ],
+                    "id": 619,
+                    "name": "ExpressionStatement",
+                    "src": "2302:40:3"
+                  }
+                ],
+                "id": 620,
+                "name": "Block",
+                "src": "1831:516:3"
+              }
+            ],
+            "id": 621,
+            "name": "FunctionDefinition",
+            "src": "1792:555:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "setUpgradeAgent",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "agent",
+                      "scope": 677,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 622,
+                        "name": "ElementaryTypeName",
+                        "src": "2427:7:3"
+                      }
+                    ],
+                    "id": 623,
+                    "name": "VariableDeclaration",
+                    "src": "2427:13:3"
+                  }
+                ],
+                "id": 624,
+                "name": "ParameterList",
+                "src": "2426:15:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 625,
+                "name": "ParameterList",
+                "src": "2451:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 626,
+                            "name": "Identifier",
+                            "src": "2457:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 748,
+                                  "type": "function () pure returns (bool)",
+                                  "value": "canUpgrade"
+                                },
+                                "id": 627,
+                                "name": "Identifier",
+                                "src": "2465:10:3"
+                              }
+                            ],
+                            "id": 628,
+                            "name": "FunctionCall",
+                            "src": "2465:12:3"
+                          }
+                        ],
+                        "id": 629,
+                        "name": "FunctionCall",
+                        "src": "2457:21:3"
+                      }
+                    ],
+                    "id": 630,
+                    "name": "ExpressionStatement",
+                    "src": "2457:21:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 631,
+                            "name": "Identifier",
+                            "src": "2485:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 623,
+                                  "type": "address",
+                                  "value": "agent"
+                                },
+                                "id": 632,
+                                "name": "Identifier",
+                                "src": "2493:5:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "307830",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0x0"
+                                },
+                                "id": 633,
+                                "name": "Literal",
+                                "src": "2502:3:3"
+                              }
+                            ],
+                            "id": 634,
+                            "name": "BinaryOperation",
+                            "src": "2493:12:3"
+                          }
+                        ],
+                        "id": 635,
+                        "name": "FunctionCall",
+                        "src": "2485:21:3"
+                      }
+                    ],
+                    "id": 636,
+                    "name": "ExpressionStatement",
+                    "src": "2485:21:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 637,
+                            "name": "Identifier",
+                            "src": "2562:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1039,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 638,
+                                    "name": "Identifier",
+                                    "src": "2570:3:3"
+                                  }
+                                ],
+                                "id": 639,
+                                "name": "MemberAccess",
+                                "src": "2570:10:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 510,
+                                  "type": "address",
+                                  "value": "upgradeMaster"
+                                },
+                                "id": 640,
+                                "name": "Identifier",
+                                "src": "2584:13:3"
+                              }
+                            ],
+                            "id": 641,
+                            "name": "BinaryOperation",
+                            "src": "2570:27:3"
+                          }
+                        ],
+                        "id": 642,
+                        "name": "FunctionCall",
+                        "src": "2562:36:3"
+                      }
+                    ],
+                    "id": 643,
+                    "name": "ExpressionStatement",
+                    "src": "2562:36:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 644,
+                            "name": "Identifier",
+                            "src": "2650:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_enum$_UpgradeState_$520",
+                                "typeString": "enum UpgradeableToken.UpgradeState"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "enum UpgradeableToken.UpgradeState",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        null
+                                      ],
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 713,
+                                      "type": "function () view returns (enum UpgradeableToken.UpgradeState)",
+                                      "value": "getUpgradeState"
+                                    },
+                                    "id": 645,
+                                    "name": "Identifier",
+                                    "src": "2658:15:3"
+                                  }
+                                ],
+                                "id": 646,
+                                "name": "FunctionCall",
+                                "src": "2658:17:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Upgrading",
+                                  "referencedDeclaration": null,
+                                  "type": "enum UpgradeableToken.UpgradeState"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 520,
+                                      "type": "type(enum UpgradeableToken.UpgradeState)",
+                                      "value": "UpgradeState"
+                                    },
+                                    "id": 647,
+                                    "name": "Identifier",
+                                    "src": "2679:12:3"
+                                  }
+                                ],
+                                "id": 648,
+                                "name": "MemberAccess",
+                                "src": "2679:22:3"
+                              }
+                            ],
+                            "id": 649,
+                            "name": "BinaryOperation",
+                            "src": "2658:43:3"
+                          }
+                        ],
+                        "id": 650,
+                        "name": "FunctionCall",
+                        "src": "2650:52:3"
+                      }
+                    ],
+                    "id": 651,
+                    "name": "ExpressionStatement",
+                    "src": "2650:52:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract UpgradeAgent"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 512,
+                              "type": "contract UpgradeAgent",
+                              "value": "upgradeAgent"
+                            },
+                            "id": 652,
+                            "name": "Identifier",
+                            "src": "2709:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "contract UpgradeAgent",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 835,
+                                  "type": "type(contract UpgradeAgent)",
+                                  "value": "UpgradeAgent"
+                                },
+                                "id": 653,
+                                "name": "Identifier",
+                                "src": "2724:12:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 623,
+                                  "type": "address",
+                                  "value": "agent"
+                                },
+                                "id": 654,
+                                "name": "Identifier",
+                                "src": "2737:5:3"
+                              }
+                            ],
+                            "id": 655,
+                            "name": "FunctionCall",
+                            "src": "2724:19:3"
+                          }
+                        ],
+                        "id": 656,
+                        "name": "Assignment",
+                        "src": "2709:34:3"
+                      }
+                    ],
+                    "id": 657,
+                    "name": "ExpressionStatement",
+                    "src": "2709:34:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 658,
+                            "name": "Identifier",
+                            "src": "2771:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "isUpgradeAgent",
+                                  "referencedDeclaration": 827,
+                                  "type": "function () pure external returns (bool)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 512,
+                                      "type": "contract UpgradeAgent",
+                                      "value": "upgradeAgent"
+                                    },
+                                    "id": 659,
+                                    "name": "Identifier",
+                                    "src": "2779:12:3"
+                                  }
+                                ],
+                                "id": 660,
+                                "name": "MemberAccess",
+                                "src": "2779:27:3"
+                              }
+                            ],
+                            "id": 661,
+                            "name": "FunctionCall",
+                            "src": "2779:29:3"
+                          }
+                        ],
+                        "id": 662,
+                        "name": "FunctionCall",
+                        "src": "2771:38:3"
+                      }
+                    ],
+                    "id": 663,
+                    "name": "ExpressionStatement",
+                    "src": "2771:38:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 664,
+                            "name": "Identifier",
+                            "src": "2879:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "uint256",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        null
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "originalSupply",
+                                      "referencedDeclaration": 819,
+                                      "type": "function () view external returns (uint256)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 512,
+                                          "type": "contract UpgradeAgent",
+                                          "value": "upgradeAgent"
+                                        },
+                                        "id": 665,
+                                        "name": "Identifier",
+                                        "src": "2887:12:3"
+                                      }
+                                    ],
+                                    "id": 666,
+                                    "name": "MemberAccess",
+                                    "src": "2887:27:3"
+                                  }
+                                ],
+                                "id": 667,
+                                "name": "FunctionCall",
+                                "src": "2887:29:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 753,
+                                  "type": "uint256",
+                                  "value": "totalSupply"
+                                },
+                                "id": 668,
+                                "name": "Identifier",
+                                "src": "2920:11:3"
+                              }
+                            ],
+                            "id": 669,
+                            "name": "BinaryOperation",
+                            "src": "2887:44:3"
+                          }
+                        ],
+                        "id": 670,
+                        "name": "FunctionCall",
+                        "src": "2879:53:3"
+                      }
+                    ],
+                    "id": 671,
+                    "name": "ExpressionStatement",
+                    "src": "2879:53:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_UpgradeAgent_$835",
+                                  "typeString": "contract UpgradeAgent"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 532,
+                              "type": "function (address)",
+                              "value": "UpgradeAgentSet"
+                            },
+                            "id": 672,
+                            "name": "Identifier",
+                            "src": "2939:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 512,
+                              "type": "contract UpgradeAgent",
+                              "value": "upgradeAgent"
+                            },
+                            "id": 673,
+                            "name": "Identifier",
+                            "src": "2955:12:3"
+                          }
+                        ],
+                        "id": 674,
+                        "name": "FunctionCall",
+                        "src": "2939:29:3"
+                      }
+                    ],
+                    "id": 675,
+                    "name": "ExpressionStatement",
+                    "src": "2939:29:3"
+                  }
+                ],
+                "id": 676,
+                "name": "Block",
+                "src": "2451:522:3"
+              }
+            ],
+            "id": 677,
+            "name": "FunctionDefinition",
+            "src": "2402:571:3"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getUpgradeState",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 678,
+                "name": "ParameterList",
+                "src": "3054:2:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 713,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum UpgradeableToken.UpgradeState",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "UpgradeState",
+                          "referencedDeclaration": 520,
+                          "type": "enum UpgradeableToken.UpgradeState"
+                        },
+                        "id": 679,
+                        "name": "UserDefinedTypeName",
+                        "src": "3081:12:3"
+                      }
+                    ],
+                    "id": 680,
+                    "name": "VariableDeclaration",
+                    "src": "3081:12:3"
+                  }
+                ],
+                "id": 681,
+                "name": "ParameterList",
+                "src": "3080:14:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!",
+                          "prefix": true,
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 748,
+                                  "type": "function () pure returns (bool)",
+                                  "value": "canUpgrade"
+                                },
+                                "id": 682,
+                                "name": "Identifier",
+                                "src": "3106:10:3"
+                              }
+                            ],
+                            "id": 683,
+                            "name": "FunctionCall",
+                            "src": "3106:12:3"
+                          }
+                        ],
+                        "id": 684,
+                        "name": "UnaryOperation",
+                        "src": "3105:13:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "functionReturnParameters": 681
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "NotAllowed",
+                                  "referencedDeclaration": null,
+                                  "type": "enum UpgradeableToken.UpgradeState"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 520,
+                                      "type": "type(enum UpgradeableToken.UpgradeState)",
+                                      "value": "UpgradeState"
+                                    },
+                                    "id": 685,
+                                    "name": "Identifier",
+                                    "src": "3135:12:3"
+                                  }
+                                ],
+                                "id": 686,
+                                "name": "MemberAccess",
+                                "src": "3135:23:3"
+                              }
+                            ],
+                            "id": 687,
+                            "name": "Return",
+                            "src": "3128:30:3"
+                          }
+                        ],
+                        "id": 688,
+                        "name": "Block",
+                        "src": "3120:45:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "address",
+                                  "type_conversion": true
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_contract$_UpgradeAgent_$835",
+                                          "typeString": "contract UpgradeAgent"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "type": "type(address)",
+                                      "value": "address"
+                                    },
+                                    "id": 689,
+                                    "name": "ElementaryTypeNameExpression",
+                                    "src": "3175:7:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 512,
+                                      "type": "contract UpgradeAgent",
+                                      "value": "upgradeAgent"
+                                    },
+                                    "id": 690,
+                                    "name": "Identifier",
+                                    "src": "3183:12:3"
+                                  }
+                                ],
+                                "id": 691,
+                                "name": "FunctionCall",
+                                "src": "3175:21:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30783030",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0x00"
+                                },
+                                "id": 692,
+                                "name": "Literal",
+                                "src": "3200:4:3"
+                              }
+                            ],
+                            "id": 693,
+                            "name": "BinaryOperation",
+                            "src": "3175:29:3"
+                          },
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "functionReturnParameters": 681
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "member_name": "WaitingForAgent",
+                                      "referencedDeclaration": null,
+                                      "type": "enum UpgradeableToken.UpgradeState"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 520,
+                                          "type": "type(enum UpgradeableToken.UpgradeState)",
+                                          "value": "UpgradeState"
+                                        },
+                                        "id": 694,
+                                        "name": "Identifier",
+                                        "src": "3221:12:3"
+                                      }
+                                    ],
+                                    "id": 695,
+                                    "name": "MemberAccess",
+                                    "src": "3221:28:3"
+                                  }
+                                ],
+                                "id": 696,
+                                "name": "Return",
+                                "src": "3214:35:3"
+                              }
+                            ],
+                            "id": 697,
+                            "name": "Block",
+                            "src": "3206:50:3"
+                          },
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "==",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 514,
+                                      "type": "uint256",
+                                      "value": "totalUpgraded"
+                                    },
+                                    "id": 698,
+                                    "name": "Identifier",
+                                    "src": "3266:13:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 699,
+                                    "name": "Literal",
+                                    "src": "3283:1:3"
+                                  }
+                                ],
+                                "id": 700,
+                                "name": "BinaryOperation",
+                                "src": "3266:18:3"
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "functionReturnParameters": 681
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "lValueRequested": false,
+                                          "member_name": "ReadyToUpgrade",
+                                          "referencedDeclaration": null,
+                                          "type": "enum UpgradeableToken.UpgradeState"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 520,
+                                              "type": "type(enum UpgradeableToken.UpgradeState)",
+                                              "value": "UpgradeState"
+                                            },
+                                            "id": 701,
+                                            "name": "Identifier",
+                                            "src": "3301:12:3"
+                                          }
+                                        ],
+                                        "id": 702,
+                                        "name": "MemberAccess",
+                                        "src": "3301:27:3"
+                                      }
+                                    ],
+                                    "id": 703,
+                                    "name": "Return",
+                                    "src": "3294:34:3"
+                                  }
+                                ],
+                                "id": 704,
+                                "name": "Block",
+                                "src": "3286:49:3"
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "functionReturnParameters": 681
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "lValueRequested": false,
+                                          "member_name": "Upgrading",
+                                          "referencedDeclaration": null,
+                                          "type": "enum UpgradeableToken.UpgradeState"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 520,
+                                              "type": "type(enum UpgradeableToken.UpgradeState)",
+                                              "value": "UpgradeState"
+                                            },
+                                            "id": 705,
+                                            "name": "Identifier",
+                                            "src": "3356:12:3"
+                                          }
+                                        ],
+                                        "id": 706,
+                                        "name": "MemberAccess",
+                                        "src": "3356:22:3"
+                                      }
+                                    ],
+                                    "id": 707,
+                                    "name": "Return",
+                                    "src": "3349:29:3"
+                                  }
+                                ],
+                                "id": 708,
+                                "name": "Block",
+                                "src": "3341:44:3"
+                              }
+                            ],
+                            "id": 709,
+                            "name": "IfStatement",
+                            "src": "3262:123:3"
+                          }
+                        ],
+                        "id": 710,
+                        "name": "IfStatement",
+                        "src": "3171:214:3"
+                      }
+                    ],
+                    "id": 711,
+                    "name": "IfStatement",
+                    "src": "3101:284:3"
+                  }
+                ],
+                "id": 712,
+                "name": "Block",
+                "src": "3095:294:3"
+              }
+            ],
+            "id": 713,
+            "name": "FunctionDefinition",
+            "src": "3030:359:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "setUpgradeMaster",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "master",
+                      "scope": 740,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 714,
+                        "name": "ElementaryTypeName",
+                        "src": "3534:7:3"
+                      }
+                    ],
+                    "id": 715,
+                    "name": "VariableDeclaration",
+                    "src": "3534:14:3"
+                  }
+                ],
+                "id": 716,
+                "name": "ParameterList",
+                "src": "3533:16:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 717,
+                "name": "ParameterList",
+                "src": "3557:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 718,
+                            "name": "Identifier",
+                            "src": "3563:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 715,
+                                  "type": "address",
+                                  "value": "master"
+                                },
+                                "id": 719,
+                                "name": "Identifier",
+                                "src": "3571:6:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "307830",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0x0"
+                                },
+                                "id": 720,
+                                "name": "Literal",
+                                "src": "3581:3:3"
+                              }
+                            ],
+                            "id": 721,
+                            "name": "BinaryOperation",
+                            "src": "3571:13:3"
+                          }
+                        ],
+                        "id": 722,
+                        "name": "FunctionCall",
+                        "src": "3563:22:3"
+                      }
+                    ],
+                    "id": 723,
+                    "name": "ExpressionStatement",
+                    "src": "3563:22:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1042,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 724,
+                            "name": "Identifier",
+                            "src": "3591:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1039,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 725,
+                                    "name": "Identifier",
+                                    "src": "3599:3:3"
+                                  }
+                                ],
+                                "id": 726,
+                                "name": "MemberAccess",
+                                "src": "3599:10:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 510,
+                                  "type": "address",
+                                  "value": "upgradeMaster"
+                                },
+                                "id": 727,
+                                "name": "Identifier",
+                                "src": "3613:13:3"
+                              }
+                            ],
+                            "id": 728,
+                            "name": "BinaryOperation",
+                            "src": "3599:27:3"
+                          }
+                        ],
+                        "id": 729,
+                        "name": "FunctionCall",
+                        "src": "3591:36:3"
+                      }
+                    ],
+                    "id": 730,
+                    "name": "ExpressionStatement",
+                    "src": "3591:36:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 510,
+                              "type": "address",
+                              "value": "upgradeMaster"
+                            },
+                            "id": 731,
+                            "name": "Identifier",
+                            "src": "3633:13:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 715,
+                              "type": "address",
+                              "value": "master"
+                            },
+                            "id": 732,
+                            "name": "Identifier",
+                            "src": "3649:6:3"
+                          }
+                        ],
+                        "id": 733,
+                        "name": "Assignment",
+                        "src": "3633:22:3"
+                      }
+                    ],
+                    "id": 734,
+                    "name": "ExpressionStatement",
+                    "src": "3633:22:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 536,
+                              "type": "function (address)",
+                              "value": "NewUpgradeMaster"
+                            },
+                            "id": 735,
+                            "name": "Identifier",
+                            "src": "3661:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 510,
+                              "type": "address",
+                              "value": "upgradeMaster"
+                            },
+                            "id": 736,
+                            "name": "Identifier",
+                            "src": "3678:13:3"
+                          }
+                        ],
+                        "id": 737,
+                        "name": "FunctionCall",
+                        "src": "3661:31:3"
+                      }
+                    ],
+                    "id": 738,
+                    "name": "ExpressionStatement",
+                    "src": "3661:31:3"
+                  }
+                ],
+                "id": 739,
+                "name": "Block",
+                "src": "3557:140:3"
+              }
+            ],
+            "id": 740,
+            "name": "FunctionDefinition",
+            "src": "3508:189:3"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "canUpgrade",
+              "payable": false,
+              "scope": 749,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 741,
+                "name": "ParameterList",
+                "src": "3816:2:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 748,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 742,
+                        "name": "ElementaryTypeName",
+                        "src": "3839:4:3"
+                      }
+                    ],
+                    "id": 743,
+                    "name": "VariableDeclaration",
+                    "src": "3839:4:3"
+                  }
+                ],
+                "id": 744,
+                "name": "ParameterList",
+                "src": "3838:6:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 744
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 745,
+                        "name": "Literal",
+                        "src": "3858:4:3"
+                      }
+                    ],
+                    "id": 746,
+                    "name": "Return",
+                    "src": "3851:11:3"
+                  }
+                ],
+                "id": 747,
+                "name": "Block",
+                "src": "3845:22:3"
+              }
+            ],
+            "id": 748,
+            "name": "FunctionDefinition",
+            "src": "3797:70:3"
+          }
+        ],
+        "id": 749,
+        "name": "ContractDefinition",
+        "src": "352:3517:3"
+      }
+    ],
+    "id": 750,
+    "name": "SourceUnit",
+    "src": "0:3870:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-03T23:15:27.041Z"
+}
