@@ -40,6 +40,7 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
 - Smart contract compilation, deployment and binary management with [Truffle](http://truffleframework.com/).
 - Automated contract testing with [Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai).
 - Solidity code linting with [Solium](https://github.com/duaraghav8/Solium).
+- Automated known vulnerability checks with Solium.
 - JavaScript code linting with [StandardJS](https://github.com/standard/standard).
 - Secure solidity utility functions with [OpenZeppelin Solidity ](https://github.com/OpenZeppelin/zeppelin-solidity)
 - Continuous integration testing with [Travis CI](https://about.travis-ci.com/)
