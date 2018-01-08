@@ -60,7 +60,7 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
 All ethereum solidity smart contracts can be found in the `/contracts` directory.
 
 - *ERC20Token.sol* is a standard ERC20 token contract, based on OpenZeppelin implementation.
-- *KnowledgeToken.sol*  is the ERC20 Token contract implementation for the KNW token. `125,000,000.00000000` tokens are created in total.
+- *KnowledgeToken.sol*  is the ERC20 Token contract implementation for the KNW token. `150,000,000.00000000` tokens are created in total.
 - *UpgradableToken.sol* is used to be able to upgrade the contract. If we ever discover a security vulnerability or have the need to publish a another version of the token contract users will be able to migrate their tokens to the new contract version. It's inspired by Lunyr and Civic token contract.
 - *PayableToken.sol* is used to receive payments at the Knowledge Marketplace and Adviser Self Service Platform. It can generate payment requests and manage fees.
 - */utils/* is meant for utilitarian contracts, such as *SafeMath* or *Ownable*.
