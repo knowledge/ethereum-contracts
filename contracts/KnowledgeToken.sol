@@ -16,10 +16,7 @@ contract Knowledge is PayableToken, UpgradeableToken {
   /** 150,000,000.00000000 KNW tokens */
   uint256 public constant INITIAL_SUPPLY = 15000000000000000;
 
-  function Knowledge() UpgradeableToken(msg.sender) public {
+  function Knowledge() public {
     totalSupply = INITIAL_SUPPLY;
-
-    balances[msg.sender] = INITIAL_SUPPLY;
-    Transfer(0x0, msg.sender, INITIAL_SUPPLY);
   }
 }
