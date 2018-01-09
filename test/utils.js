@@ -5,7 +5,8 @@ module.exports = {
     try {
       await promise
     } catch (err) {
-      assert(err.toString().includes('invalid opcode'), errMsg)
+      const error = err.toString()
+      assert(error.includes('invalid opcode') || error.includes('revert'), errMsg)
       return
     }
 
