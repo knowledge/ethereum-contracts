@@ -49,7 +49,7 @@ contract UpgradeableToken is ERC20Token, Ownable {
   modifier destroyIfEmpty() {
     _;
     if (totalSupply == 0) {
-      selfdestruct(owner);
+      selfdestruct(owners[0]);
     }
   }
 

@@ -7,34 +7,57 @@ pragma solidity ^0.4.18;
  * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
-  address public owner;
+  address[] public owners;
 
-  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+  event NewOwner(address indexed authorizer, address indexed newOwner, uint256 index);
+
+  event OwnerRemoved(address indexed authorizer, address indexed ownerRemoved);
 
   /**
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
   function Ownable() public {
-    owner = msg.sender;
+    owners.push(msg.sender);
   }
 
   /**
-   * @dev Throws if called by any account other than the owner.
+   * @dev Throws if called by any account other than one owner.
    */
   modifier onlyOwner() {
-    require(msg.sender == owner);
+    bool isOwner = false;
+
+    for (uint256 i = 0; i < owners.length; i++) {
+      if (msg.sender == owners[i]) {
+        isOwner = true;
+      }
+    }
+
+    require(isOwner);
     _;
   }
 
   /**
-   * @dev Allows the current owner to transfer control of the contract to a newOwner.
-   * @param newOwner The address to transfer ownership to.
+   * @dev Allows one of the current owners to add a new owner
+   * @param newOwner The address give ownership to.
    */
-  function transferOwnership(address newOwner) onlyOwner public {
+  function addOwner(address newOwner) onlyOwner public {
     require(newOwner != address(0));
-    OwnershipTransferred(owner, newOwner);
-    owner = newOwner;
+    uint256 i = owners.push(newOwner) - 1;
+    NewOwner(msg.sender, newOwner, i);
   }
 
+  /**
+   * @dev Allows one of the owners to remove other owner
+   */
+  function removeOwner(uint256 index) onlyOwner public {
+    address owner = owners[index];
+    owners[index] = owners[owners.length - 1];
+    delete owners[owners.length - 1];
+    OwnerRemoved(msg.sender, owner);
+  }
+
+  function ownersCount() constant public returns (uint256) {
+    return owners.length;
+  }
 }
