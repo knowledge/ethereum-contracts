@@ -31,6 +31,53 @@ contract('Knowledge', accounts => {
     })
   })
 
+  describe.only('ownership', () => {
+    it('should start with one owner', async () => {
+      const owners = await KNW.ownersCount()
+      assert.strictEqual(owners.toNumber(), 1)
+    })
+
+    it('should add a new owner', async () => {
+      await KNW.addOwner(accounts[1])
+      assert.strictEqual(await KNW.owners(1), accounts[1])
+    })
+
+    it('should fail to add an owner it not authorized', async () => {
+      await expectThrow(KNW.addOwner(accounts[1], { from: accounts[1] }))
+    })
+
+    it('should give the owner permisions to all of them', async () => {
+      await KNW.addOwner(accounts[1], { from: accounts[0] })
+      await KNW.addOwner(accounts[2], { from: accounts[1] })
+      await KNW.addOwner(accounts[3], { from: accounts[2] })
+      assert.strictEqual((await KNW.ownersCount()).toNumber(), 4)
+    })
+
+    it('should remove one owner', async () => {
+      await KNW.addOwner(accounts[1], { from: accounts[0] })
+      await KNW.addOwner(accounts[2], { from: accounts[1] })
+
+      await KNW.removeOwner(0, { from: accounts[1] })
+      assert.strictEqual(await KNW.owners(0), accounts[2])
+    })
+
+    it('should fire the NewOwner event', async () => {
+      const res = await KNW.addOwner(accounts[1])
+      const log = res.logs.find(element => element.event.match('NewOwner'))
+      assert.strictEqual(log.args.authorizer, accounts[0])
+      assert.strictEqual(log.args.newOwner, accounts[1])
+      assert.strictEqual(log.args.index.toNumber(), 1)
+    })
+
+    it('should fire the OwnerRemoved event', async () => {
+      await KNW.addOwner(accounts[1])
+      const res = await KNW.removeOwner(1)
+      const log = res.logs.find(element => element.event.match('OwnerRemoved'))
+      assert.strictEqual(log.args.authorizer, accounts[0])
+      assert.strictEqual(log.args.ownerRemoved, accounts[1])
+    })
+  })
+
   describe('upgrade', () => {
     it('should set the prev/next contract', async () => {
       await KNWB.setNextContract(KNW.address)
