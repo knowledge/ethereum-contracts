@@ -66,7 +66,10 @@ contract PayableToken is ERC20Token, Ownable {
 
     verifySignature(h, r, s, v, seller, store, value, fee, ref);
 
-    assert(transfer(store, fee));
+    if (fee > 0) {
+      assert(transfer(store, fee));
+    }
+
     assert(transfer(seller, value));
 
     Pay(store, seller, msg.sender, value, ref);
