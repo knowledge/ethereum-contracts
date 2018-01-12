@@ -31,7 +31,7 @@ contract('Knowledge', accounts => {
     })
   })
 
-  describe.only('ownership', () => {
+  describe('ownership', () => {
     it('should start with one owner', async () => {
       const owners = await KNW.ownersCount()
       assert.strictEqual(owners.toNumber(), 1)

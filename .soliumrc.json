@@ -13,8 +13,10 @@
       2
     ],
     "arg-overflow": [
-      "warning",
-      3
+      "off"
+    ],
+    "uppercase": [
+      "off"
     ]
   }
 }
