@@ -1,6 +1,6 @@
 require('dotenv').load()
 
-const HDWalletProvider = require("truffle-hdwallet-provider")
+const HDWalletProvider = require('truffle-hdwallet-provider')
 
 const infuraToken = process.env.INFURA_TOKEN
 const mnemonic = process.env.MNEMONIC
