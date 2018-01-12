@@ -36,7 +36,7 @@ contract PayableToken is ERC20Token, Ownable {
     private
     returns (bool)
   {
-    bytes memory prefix = "\x19Ethereum Signed Message:\n32";
+    bytes memory prefix = '\x19Ethereum Signed Message:\n32';
     bytes32 ph = keccak256(prefix, h);
     address signer = ecrecover(ph, v, r, s);
     assert(signer == store);
