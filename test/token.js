@@ -1,7 +1,7 @@
 const Knowledge = artifacts.require('Knowledge')
 const KnowledgeBase = artifacts.require('KnowledgeBase')
 
-const { expectThrow } = require('./utils')
+const { convertTo: { uint256 }, expectThrow, sign } = require('./utils')
 
 const initialSupply = 150000000 * 10 ** 8
 
@@ -251,67 +251,88 @@ contract('Knowledge', accounts => {
     })
 
     describe('payments', () => {
-      it('should create a payment request', async () => {
-        await KNW.requestPayment(100, 5, 'ID', accounts[1], { from: accounts[0] })
-        const [value, fee, seller] = await KNW.paymentInfo(accounts[0], 'ID', { from: accounts[0] })
-        assert.strictEqual(value.toNumber(), 100)
-        assert.strictEqual(fee.toNumber(), 5)
-        assert.strictEqual(seller, accounts[1])
+      const fee = 5
+      const ref = 'ID'
+      const value = 100
+      const storeId = 1
+      const balance = 1000
+      const [store, seller, buyer] = accounts
+
+      const signPayment = (a, b, c, d, e) =>
+        sign(b, a.slice(2) + b.slice(2) + uint256(c) + uint256(d) + web3.toHex(e).slice(2))
+
+      beforeEach(async () => {
+        // Privision account with founds
+        await KNW.transfer(buyer, balance, { from: store })
+        await KNW.addStore(storeId, store, { from: store })
       })
 
       it('should make a payment', async () => {
-        // Privision account with founds
-        await KNW.transfer(accounts[1], 1000, { from: accounts[0] })
-        // Request a payment of 100 with a fee of 5
-        await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
-        // Make the payment
-        await KNW.pay(accounts[0], 'ID', { from: accounts[1] })
+        const [ h, r, s, v ] = signPayment(seller, store, value, fee, ref)
+        await KNW.pay(h, r, s, v, seller, storeId, value, fee, ref, { from: buyer })
 
-        // Balance should be -1000 for the transfer, +5 for the fee
-        const masterBalance = await KNW.balanceOf(accounts[0])
-        assert.strictEqual(masterBalance.toNumber(), initialSupply - 995)
+        const masterBalance = await KNW.balanceOf(store)
+        assert.strictEqual(masterBalance.toNumber(), initialSupply - balance + fee)
 
-        // Balance should be +1000 for the transfer, -100 for the payment, -5 for the fee
-        const customerBalance = await KNW.balanceOf(accounts[1])
-        assert.strictEqual(customerBalance.toNumber(), 895)
+        const customerBalance = await KNW.balanceOf(buyer)
+        assert.strictEqual(customerBalance.toNumber(), balance - value - fee)
 
-        // Balance should be +100 for the payment
-        const sellerBalance = await KNW.balanceOf(accounts[2])
-        assert.strictEqual(sellerBalance.toNumber(), 100)
+        const sellerBalance = await KNW.balanceOf(seller)
+        assert.strictEqual(sellerBalance.toNumber(), value)
       })
 
-      it('should fail at paying something that does not exist', async () => {
-        await expectThrow(KNW.pay(accounts[0], 'ID', { from: accounts[1] }))
+      it('should fail at paying something with the wrong parameters', async () => {
+        const [ hash, r, s, v ] = sign(seller, store, value, fee, ref)
+        await expectThrow(KNW.pay(hash, r, s, v, store, storeId, value, fee, ref, { from: buyer }))
+        await expectThrow(KNW.pay(hash, r, s, v, seller, 0, value, fee, ref, { from: buyer }))
+        await expectThrow(KNW.pay(hash, r, s, v, seller, storeId, 1, fee, ref, { from: buyer }))
+        await expectThrow(KNW.pay(hash, r, s, v, seller, storeId, value, 1, ref, { from: buyer }))
+        await expectThrow(KNW.pay(hash, r, s, v, seller, storeId, value, fee, '1', { from: buyer }))
       })
 
       it('should fail if the customer does not have all the founds and should revert the founds', async () => {
-        // Privision account with some founds
-        await KNW.transfer(accounts[1], 100, { from: accounts[0] })
-        // Request a payment of 100 with a fee of 5
-        await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
-        // Make the payment
-        await expectThrow(KNW.pay(accounts[0], 'ID', { from: accounts[1] }))
+        const [ hash, r, s, v ] = sign(seller, store, balance, fee, ref)
+        await expectThrow(KNW.pay(hash, r, s, v, seller, storeId, balance, fee, ref, { from: buyer }))
 
-        const customerBalance = await KNW.balanceOf(accounts[1])
-        assert.strictEqual(customerBalance.toNumber(), 100)
+        const customerBalance = await KNW.balanceOf(buyer)
+        assert.strictEqual(customerBalance.toNumber(), balance)
 
-        const sellerBalance = await KNW.balanceOf(accounts[2])
+        const sellerBalance = await KNW.balanceOf(seller)
         assert.strictEqual(sellerBalance.toNumber(), 0)
       })
 
+      it('should add a store', async () => {
+        const newStore = accounts[3]
+        await KNW.addStore(2, newStore, { from: store })
+        assert.strictEqual(await KNW.stores(2), newStore)
+
+        const [ h, r, s, v ] = signPayment(seller, newStore, value, fee, ref)
+        await KNW.pay(h, r, s, v, seller, 2, value, fee, ref, { from: buyer })
+      })
+
+      it('should fail to add a store if not authorized', async () => {
+        await expectThrow(KNW.addStore(2, accounts[3], { from: buyer }))
+      })
+
+      it('should fire NewStore event', async () => {
+        const newStore = accounts[3]
+        const res = await KNW.addStore(2, newStore, { from: store })
+
+        const log = res.logs.find(element => element.event.match('NewStore'))
+        assert.strictEqual(log.args.id.toNumber(), 2)
+        assert.strictEqual(log.args.store, newStore)
+      })
+
       it('should fire Pay event', async () => {
-        // Privision account with founds
-        await KNW.transfer(accounts[1], 1000, { from: accounts[0] })
-        // Request a payment of 100 with a fee of 5
-        await KNW.requestPayment(100, 5, 'ID', accounts[2], { from: accounts[0] })
-        // Make the payment
-        const res = await KNW.pay(accounts[0], 'ID', { from: accounts[1] })
+        const [ h, r, s, v ] = signPayment(seller, store, value, fee, ref)
+        const res = await KNW.pay(h, r, s, v, seller, storeId, value, fee, ref, { from: buyer })
 
         const log = res.logs.find(element => element.event.match('Pay'))
-        assert.strictEqual(log.args.from, accounts[1])
-        assert.strictEqual(log.args.to, accounts[2])
-        assert.strictEqual(log.args.amount.toNumber(), 100)
-        assert.strictEqual(log.args.ref, 'ID')
+        assert.strictEqual(log.args.store, store)
+        assert.strictEqual(log.args.seller, seller)
+        assert.strictEqual(log.args.buyer, buyer)
+        assert.strictEqual(log.args.value.toNumber(), value)
+        assert.strictEqual(log.args.ref, ref)
       })
     })
   })

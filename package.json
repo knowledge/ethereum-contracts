@@ -21,6 +21,7 @@
     "dotenv": "^4.0.0",
     "eth-gas-reporter": "^0.1.1",
     "ganache-cli": "^6.0.3",
+    "left-pad": "^1.2.0",
     "rimraf": "^2.6.2",
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
