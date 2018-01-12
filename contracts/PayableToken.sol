@@ -1,6 +1,7 @@
 pragma solidity ^0.4.18;
 
 import { ERC20Token } from './ERC20Token.sol';
+import { Ownable } from './utils/Ownable.sol';
 
 
 /**
@@ -8,36 +9,67 @@ import { ERC20Token } from './ERC20Token.sol';
  * and log a Pay message with a reference message to bind the payment to an
  * order id or some other identifier
  */
-contract PayableToken is ERC20Token {
-  struct PaymentRequest {
-    uint256 value;
-    uint8 fee;
-    address seller;
+contract PayableToken is ERC20Token, Ownable {
+  mapping(uint256 => address) public stores;
+
+  event Pay(address indexed store, address indexed seller, address indexed buyer, uint256 value, string ref);
+
+  event NewStore(uint256 id, address store);
+
+  function addStore(uint256 id, address store) public onlyOwner {
+    stores[id] = store;
+    NewStore(id, store);
   }
 
-  mapping (address => mapping(string => PaymentRequest)) private pendingPayments;
+  function verifySignature(
+    bytes32 h,
+    bytes32 r,
+    bytes32 s,
+    uint8 v,
+    address seller,
+    address store,
+    uint256 value,
+    uint256 fee,
+    string ref
+  )
+    pure
+    private
+    returns (bool)
+  {
+    bytes memory prefix = "\x19Ethereum Signed Message:\n32";
+    bytes32 ph = keccak256(prefix, h);
+    address signer = ecrecover(ph, v, r, s);
+    assert(signer == store);
 
-  event Pay(address from, address to, uint256 amount, string ref);
+    bytes32 proof = keccak256(seller, store, value, fee, ref);
+    assert(proof == h);
 
-  function requestPayment(uint256 value, uint8 fee, string ref, address to) public {
-    pendingPayments[msg.sender][ref] = PaymentRequest(value, fee, to);
+    return true;
   }
 
-  function paymentInfo(address store, string ref) public view returns (uint256 value, uint8 fee, address seller) {
-    PaymentRequest memory paymentRequest = pendingPayments[store][ref];
-    value = paymentRequest.value;
-    fee = paymentRequest.fee;
-    seller = paymentRequest.seller;
-  }
+  function pay(
+    bytes32 h,
+    bytes32 r,
+    bytes32 s,
+    uint8 v,
+    address seller,
+    uint256 storeId,
+    uint256 value,
+    uint256 fee,
+    string ref
+  )
+    public
+    returns (bool)
+  {
+    address store = stores[storeId];
+    assert(store != 0x0);
 
-  function pay(address store, string ref) public returns (bool) {
-    PaymentRequest memory paymentRequest = pendingPayments[store][ref];
+    verifySignature(h, r, s, v, seller, store, value, fee, ref);
 
-    assert(paymentRequest.seller != 0x0);
-    assert(transfer(store, paymentRequest.fee));
-    assert(transfer(paymentRequest.seller, paymentRequest.value));
+    assert(transfer(store, fee));
+    assert(transfer(seller, value));
 
-    Pay(msg.sender, paymentRequest.seller, paymentRequest.value, ref);
+    Pay(store, seller, msg.sender, value, ref);
 
     return true;
   }
