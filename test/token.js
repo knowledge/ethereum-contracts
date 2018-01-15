@@ -153,20 +153,21 @@ contract('Knowledge', accounts => {
       assert.strictEqual(upgradeFromLog.args._value.toNumber(), initialSupply)
     })
 
-    it('should fire the Burn/Transfer events', async () => {
+    it('should fire the Transfer events', async () => {
       await KNW.setPrevContract(KNWB.address)
       await KNWB.setNextContract(KNW.address)
 
       const res = await KNWB.upgrade()
 
-      const burnLog = res.logs.find(element => element.event === 'Burn')
-      assert.strictEqual(upgradeLog.args.burner, accounts[0])
-      assert.strictEqual(upgradeLog.args.value.toNumber(), initialSupply)
+      const destroyLog = res.logs
+        .find(element => element.event === 'Transfer' && element.args.to === '0x0000000000000000000000000000000000000000')
+      assert.strictEqual(destroyLog.args.from, accounts[0])
+      assert.strictEqual(destroyLog.args.value.toNumber(), initialSupply)
 
-      const transferLog = res.logs.find(element => element.event === 'Transfer')
-      assert.strictEqual(upgradeFromLog.args.from, '0x0')
-      assert.strictEqual(upgradeFromLog.args.to, accounts[0])
-      assert.strictEqual(upgradeFromLog.args.value.toNumber(), initialSupply)
+      const createLog = res.logs
+        .find(element => element.event === 'Transfer' && element.args.from === '0x0000000000000000000000000000000000000000')
+      assert.strictEqual(createLog.args.to, accounts[0])
+      assert.strictEqual(createLog.args.value.toNumber(), initialSupply)
     })
   })
 
