@@ -26,6 +26,8 @@ contract UpgradeableToken is ERC20Token, Ownable {
   event Upgrade(address indexed _from, address indexed _to, uint256 _value);
   event UpgradeFrom(address indexed _from, address indexed _to, uint256 _value);
 
+  event Burn(address indexed burner, uint256 value);
+
   /**
    * Next contract available.
    */
@@ -69,6 +71,7 @@ contract UpgradeableToken is ERC20Token, Ownable {
     // Take tokens out from circulation
     balances[msg.sender] = 0;
     totalSupply = totalSupply.sub(value);
+    Burn(msg.sender, value);
 
     // Upgrade contract reissues the tokens
     nextContract.upgradeFrom(msg.sender, value);
@@ -79,6 +82,7 @@ contract UpgradeableToken is ERC20Token, Ownable {
 
   function upgradeFrom(address holder, uint256 value) fromPrevContract public returns (bool) {
     balances[holder] = value;
+    Transfer(address(0), holder, value);
     UpgradeFrom(address(prevContract), holder, value);
 
     return true;
