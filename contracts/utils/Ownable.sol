@@ -9,9 +9,9 @@ pragma solidity ^0.4.18;
 contract Ownable {
   address[] public owners;
 
-  event NewOwner(address indexed authorizer, address indexed newOwner, uint256 index);
+  event OwnerAdded(address indexed authorizer, address indexed newOwner, uint256 index);
 
-  event OwnerRemoved(address indexed authorizer, address indexed ownerRemoved);
+  event OwnerRemoved(address indexed authorizer, address indexed oldOwner);
 
   /**
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
@@ -44,7 +44,7 @@ contract Ownable {
   function addOwner(address newOwner) onlyOwner public {
     require(newOwner != address(0));
     uint256 i = owners.push(newOwner) - 1;
-    NewOwner(msg.sender, newOwner, i);
+    OwnerAdded(msg.sender, newOwner, i);
   }
 
   /**

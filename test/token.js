@@ -61,9 +61,9 @@ contract('Knowledge', accounts => {
       assert.strictEqual(await KNW.owners(0), accounts[2])
     })
 
-    it('should fire the NewOwner event', async () => {
+    it('should fire the OwnerAdded event', async () => {
       const res = await KNW.addOwner(accounts[1])
-      const log = res.logs.find(element => element.event.match('NewOwner'))
+      const log = res.logs.find(element => element.event.match('OwnerAdded'))
       assert.strictEqual(log.args.authorizer, accounts[0])
       assert.strictEqual(log.args.newOwner, accounts[1])
       assert.strictEqual(log.args.index.toNumber(), 1)
@@ -74,7 +74,7 @@ contract('Knowledge', accounts => {
       const res = await KNW.removeOwner(1)
       const log = res.logs.find(element => element.event.match('OwnerRemoved'))
       assert.strictEqual(log.args.authorizer, accounts[0])
-      assert.strictEqual(log.args.ownerRemoved, accounts[1])
+      assert.strictEqual(log.args.oldOwner, accounts[1])
     })
   })
 
@@ -151,6 +151,22 @@ contract('Knowledge', accounts => {
       assert.strictEqual(upgradeFromLog.args._from, KNWB.address)
       assert.strictEqual(upgradeFromLog.args._to, accounts[0])
       assert.strictEqual(upgradeFromLog.args._value.toNumber(), initialSupply)
+    })
+
+    it('should fire the Burn/Transfer events', async () => {
+      await KNW.setPrevContract(KNWB.address)
+      await KNWB.setNextContract(KNW.address)
+
+      const res = await KNWB.upgrade()
+
+      const burnLog = res.logs.find(element => element.event === 'Burn')
+      assert.strictEqual(upgradeLog.args.burner, accounts[0])
+      assert.strictEqual(upgradeLog.args.value.toNumber(), initialSupply)
+
+      const transferLog = res.logs.find(element => element.event === 'Transfer')
+      assert.strictEqual(upgradeFromLog.args.from, '0x0')
+      assert.strictEqual(upgradeFromLog.args.to, accounts[0])
+      assert.strictEqual(upgradeFromLog.args.value.toNumber(), initialSupply)
     })
   })
 
