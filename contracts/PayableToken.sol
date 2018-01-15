@@ -1,7 +1,6 @@
 pragma solidity ^0.4.18;
 
 import { ERC20Token } from './ERC20Token.sol';
-import { Ownable } from './utils/Ownable.sol';
 
 
 /**
@@ -9,70 +8,50 @@ import { Ownable } from './utils/Ownable.sol';
  * and log a Pay message with a reference message to bind the payment to an
  * order id or some other identifier
  */
-contract PayableToken is ERC20Token, Ownable {
-  mapping(uint256 => address) public stores;
-
-  event Pay(address indexed store, address indexed seller, address indexed buyer, uint256 value, string ref);
-
-  event NewStore(uint256 id, address store);
-
-  function addStore(uint256 id, address store) public onlyOwner {
-    stores[id] = store;
-    NewStore(id, store);
+contract PayableToken is ERC20Token {
+  struct PaymentRequest {
+    uint256 fee;
+    uint256 value;
+    address seller;
   }
 
-  function verifySignature(
-    bytes32 h,
-    bytes32 r,
-    bytes32 s,
-    uint8 v,
-    address seller,
-    address store,
+  mapping (address => mapping(string => PaymentRequest)) private pendingPayments;
+
+  event Pay(
+    address indexed from,
+    address indexed seller,
+    address indexed store,
     uint256 value,
     uint256 fee,
     string ref
-  )
-    pure
-    private
-    returns (bool)
-  {
-    bytes memory prefix = '\x19Ethereum Signed Message:\n32';
-    bytes32 ph = keccak256(prefix, h);
-    address signer = ecrecover(ph, v, r, s);
-    assert(signer == store);
+  );
 
-    bytes32 proof = keccak256(seller, store, value, fee, ref);
-    assert(proof == h);
-
-    return true;
+  function requestPayment(uint256 value, uint256 fee, string ref, address to) public {
+    pendingPayments[msg.sender][ref] = PaymentRequest(fee, value, to);
   }
 
-  function pay(
-    bytes32 h,
-    bytes32 r,
-    bytes32 s,
-    uint8 v,
-    address seller,
-    uint256 storeId,
-    uint256 value,
-    uint256 fee,
-    string ref
-  )
-    public
-    returns (bool)
-  {
-    address store = stores[storeId];
-    assert(store != 0x0);
+  function cancelPayment(string ref) public {
+    delete pendingPayments[msg.sender][ref];
+  }
 
-    verifySignature(h, r, s, v, seller, store, value, fee, ref);
+  function paymentInfo(address store, string ref) public view returns (uint256 value, uint256 fee, address seller) {
+    PaymentRequest memory paymentRequest = pendingPayments[store][ref];
+    value = paymentRequest.value;
+    fee = paymentRequest.fee;
+    seller = paymentRequest.seller;
+  }
 
-    if (fee > 0) {
-      assert(transfer(store, fee));
+  function pay(address store, string ref) public returns (bool) {
+    PaymentRequest memory paymentRequest = pendingPayments[store][ref];
+
+    if (paymentRequest.fee > 0) {
+      assert(transfer(store, paymentRequest.fee));
     }
 
-    assert(transfer(seller, value));
+    assert(transfer(paymentRequest.seller, paymentRequest.value));
 
-    Pay(store, seller, msg.sender, value, ref);
+    Pay(msg.sender, paymentRequest.seller, store, paymentRequest.value, paymentRequest.fee, ref);
+    delete pendingPayments[store][ref];
 
     return true;
   }
