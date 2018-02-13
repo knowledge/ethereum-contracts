@@ -27,7 +27,6 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
   - [Project Dependencies](#project-dependencies)
   - [Running Development Mode](#running-development-mode)
   - [Testing your code](#testing-your-code)
-  - [Deploying to the TestNet](#deploying-to-the-testnet)
 - [Contributing](#contributing)
 - [Bug Reporting](#bug-reporting)
 - [License](#license)
@@ -105,19 +104,6 @@ npm run ganache
 npm run lint
 npm run test
 ```
-
-### Deploying to the Ropsten Testnet
-
-We use [Ropsten (revived) Tesnet](https://ropsten.etherscan.io/) as our user testing environment for our contracts.
-The deployment is done through [Infura.io](https://infura.io/).
-To create Ropsten Wallet Addresses and make use of the Knowledge contracts on the Ropsten TestNet you can use [metamask.io](https://metamask.io/) or a command line tool like [geth](https://github.com/ethereum/go-ethereum/wiki/geth).
-
-If you chose metamask in order to interact with the contract follow these instructions  https://support.metamask.io/kb/article/4-managing-tokens
-
-To deploy from your computer first you need create the `.env` file on your machine based on `.env-sample`.
-Then run following command:
-
-`npm run deploy-ropsten`
 
 ## Contributing
 
