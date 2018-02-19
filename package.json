@@ -2,7 +2,7 @@
   "name": "@knowledgeio/knowledge-contracts",
   "main": "build/contracts/Knowledge.json",
   "description": "Knowledge Ethereum Contracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./build",
