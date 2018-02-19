@@ -13,7 +13,7 @@
     "deploy-ropsten": "truffle migrate --network ropsten",
     "test": "truffle test",
     "doctoc": "doctoc --github --title \"## Contents\" README.md",
-    "ganache": "ganache-cli"
+    "ganache": "eval $(cat .env) && ganache-cli --db chain -m \"$MNEMONIC\""
   },
   "dependencies": {},
   "devDependencies": {
