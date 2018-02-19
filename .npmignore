@@ -1,0 +1,6 @@
+.*
+chain
+migrations
+test
+truffle.js
+ethpm.json
