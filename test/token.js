@@ -318,7 +318,6 @@ contract('Knowledge', accounts => {
       const fee = 5
       const ref = 'ID'
       const value = 100
-      const storeId = 1
       const balance = 1000
       const [store, seller, buyer] = accounts
 

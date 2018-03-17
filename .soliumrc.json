@@ -17,6 +17,15 @@
     ],
     "uppercase": [
       "off"
+    ],
+    "mixedcase": [
+      "off"
+    ],
+    "function-order": [
+      "off"
+    ],
+    "security/no-inline-assembly": [
+      "off"
     ]
   }
 }
