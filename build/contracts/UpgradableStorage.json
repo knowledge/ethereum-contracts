@@ -1,0 +1,401 @@
+{
+  "contractName": "UpgradableStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "owners",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "addOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ownersCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "NewImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "authorizer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "OwnerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "authorizer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "oldOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerRemoved",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x606060405260008054600181016100168382610076565b50600091825260208220018054600160a060020a03191633600160a060020a0316908117909155907fa0b18fca933618876351ba2ef88bf4505c184d3e55064bec0d7fe236dd706d848160405190815260200160405180910390a36100c0565b81548183558181151161009a5760008381526020902061009a91810190830161009f565b505050565b6100bd91905b808211156100b957600081556001016100a5565b5090565b90565b61041e806100cf6000396000f30060606040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663025e7c2781146100715780635c60da1b146100a35780636b919488146100b65780637065cb48146100ce578063b9488546146100ed575b600080fd5b341561007c57600080fd5b610087600435610112565b604051600160a060020a03909116815260200160405180910390f35b34156100ae57600080fd5b61008761013a565b34156100c157600080fd5b6100cc60043561014a565b005b34156100d957600080fd5b6100cc600160a060020a03600435166102aa565b34156100f857600080fd5b6101006103a5565b60405190815260200160405180910390f35b600080548290811061012057fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a03165b90565b600080805b60005481101561019857600080548290811061016757fe5b60009182526020909120015433600160a060020a03908116911614156101905760019150610198565b60010161014f565b8115156101a457600080fd5b60008054859081106101b257fe5b60009182526020822001548154600160a060020a03909116945060001981019081106101da57fe5b60009182526020822001548154600160a060020a039091169190869081106101fe57fe5b60009182526020822001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0393909316929092179091558054600019810190811061024457fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff19169055600160a060020a038381169033167fe594d081b4382713733fe631966432c9cea5199afb2db5c3c1931f9f9300367960405160405180910390a350505050565b600080805b6000548110156102f85760008054829081106102c757fe5b60009182526020909120015433600160a060020a03908116911614156102f057600191506102f8565b6001016102af565b81151561030457600080fd5b600160a060020a038416151561031957600080fd5b60016000805480600101828161032f91906103ab565b6000928352602090922001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0388811691821790925592909103945033167fa0b18fca933618876351ba2ef88bf4505c184d3e55064bec0d7fe236dd706d848560405190815260200160405180910390a350505050565b60005490565b8154818355818115116103cf576000838152602090206103cf9181019083016103d4565b505050565b61014791905b808211156103ee57600081556001016103da565b50905600a165627a7a72305820cf4a8cf720f94578061a909b16209303e947ce545b0d125846afbe9340b82c4e0029",
+  "deployedBytecode": "0x60606040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663025e7c2781146100715780635c60da1b146100a35780636b919488146100b65780637065cb48146100ce578063b9488546146100ed575b600080fd5b341561007c57600080fd5b610087600435610112565b604051600160a060020a03909116815260200160405180910390f35b34156100ae57600080fd5b61008761013a565b34156100c157600080fd5b6100cc60043561014a565b005b34156100d957600080fd5b6100cc600160a060020a03600435166102aa565b34156100f857600080fd5b6101006103a5565b60405190815260200160405180910390f35b600080548290811061012057fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a03165b90565b600080805b60005481101561019857600080548290811061016757fe5b60009182526020909120015433600160a060020a03908116911614156101905760019150610198565b60010161014f565b8115156101a457600080fd5b60008054859081106101b257fe5b60009182526020822001548154600160a060020a03909116945060001981019081106101da57fe5b60009182526020822001548154600160a060020a039091169190869081106101fe57fe5b60009182526020822001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0393909316929092179091558054600019810190811061024457fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff19169055600160a060020a038381169033167fe594d081b4382713733fe631966432c9cea5199afb2db5c3c1931f9f9300367960405160405180910390a350505050565b600080805b6000548110156102f85760008054829081106102c757fe5b60009182526020909120015433600160a060020a03908116911614156102f057600191506102f8565b6001016102af565b81151561030457600080fd5b600160a060020a038416151561031957600080fd5b60016000805480600101828161032f91906103ab565b6000928352602090922001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0388811691821790925592909103945033167fa0b18fca933618876351ba2ef88bf4505c184d3e55064bec0d7fe236dd706d848560405190815260200160405180910390a350505050565b60005490565b8154818355818115116103cf576000838152602090206103cf9181019083016103d4565b505050565b61014791905b808211156103ee57600081556001016103da565b50905600a165627a7a72305820cf4a8cf720f94578061a909b16209303e947ce545b0d125846afbe9340b82c4e0029",
+  "sourceMap": "69:384:18:-;;;581:6:14;:23;;;;;;:6;:23;;:::i;:::-;-1:-1:-1;581:23:14;;;;;;;;;;-1:-1:-1;;;;;;581:23:14;593:10;-1:-1:-1;;;;;581:23:14;;;;;;;;610:30;581:23;610:30;;;;;;;;;;;;;;69:384:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "69:384:18:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:23:14;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;238:23:14;;;;;;;;;;;;;;362:89:18;;;;;;;;;;;;1330:215:14;;;;;;;;;;;;;;;;1078:179;;;;;;;;;;-1:-1:-1;;;;;1078:179:14;;;;;1549:88;;;;;;;;;;;;;;;;;;;;;;;;;;;238:23;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;238:23:14;;-1:-1:-1;238:23:14;:::o;362:89:18:-;431:15;;-1:-1:-1;;;;;431:15:18;362:89;;:::o;1330:215:14:-;1389:13;;;779:135;803:6;:13;799:17;;779:135;;;849:6;:9;;856:1;;849:9;;;;;;;;;;;;;;;;835:10;-1:-1:-1;;;;;835:23:14;;;849:9;;835:23;831:77;;;880:4;870:14;;894:5;;831:77;818:3;;779:135;;;928:7;920:16;;;;;;;;1405:6;:13;;1412:5;;1405:13;;;;;;;;;;;;;;;1447;;-1:-1:-1;;;;;1405:13:14;;;;-1:-1:-1;;;1447:17:14;;;1440:25;;;;;;;;;;;;;;;1424:13;;-1:-1:-1;;;;;1440:25:14;;;;;1431:5;;1424:13;;;;;;;;;;;;;;:41;;-1:-1:-1;;1424:41:14;-1:-1:-1;;;;;1424:41:14;;;;;;;;;;;1485:13;;-1:-1:-1;;1485:17:14;;;1478:25;;;;;;;;;;;;;;;1471:32;;-1:-1:-1;;1471:32:14;;;-1:-1:-1;;;;;1509:31:14;;;;1522:10;1509:31;;;;;;;;;;;1330:215;;;;:::o;1078:179::-;1174:9;;;779:135;803:6;:13;799:17;;779:135;;;849:6;:9;;856:1;;849:9;;;;;;;;;;;;;;;;835:10;-1:-1:-1;;;;;835:23:14;;;849:9;;835:23;831:77;;;880:4;870:14;;894:5;;831:77;818:3;;779:135;;;928:7;920:16;;;;;;;;-1:-1:-1;;;;;1145:22:14;;;;1137:31;;;;;;1210:1;1186:6;:21;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;-1:-1:-1;;1186:21:14;-1:-1:-1;;;;;1186:21:14;;;;;;;;;:25;;;;;-1:-1:-1;1228:10:14;1217:35;;1186:25;1217:35;;;;;;;;;;;;;;1078:179;;;;:::o;1549:88::-;1597:7;1619:13;1549:88;:::o;69:384:18:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity ^0.4.18;\n\nimport { Ownable } from './Ownable.sol';\n\n\ncontract UpgradableStorage is Ownable {\n\n  // Address of the current implementation\n  address internal _implementation;\n\n  event NewImplementation(address implementation);\n\n  /**\n  * @dev Tells the address of the current implementation\n  * @return address of the current implementation\n  */\n  function implementation() public view returns (address) {\n    return _implementation;\n  }\n}\n",
+  "sourcePath": "/Users/diegobarahona/Documents/Projects/Knowledge/knowledge-contracts/contracts/utils/UpgradableStorage.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowledge/knowledge-contracts/contracts/utils/UpgradableStorage.sol",
+      "exportedSymbols": {
+        "UpgradableStorage": [
+          1991
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 1972,
+        "name": "PragmaDirective",
+        "src": "0:24:18"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1834,
+          "absolutePath": "/Users/diegobarahona/Documents/Projects/Knowledge/knowledge-contracts/contracts/utils/Ownable.sol",
+          "file": "./Ownable.sol",
+          "scope": 1992,
+          "symbolAliases": [
+            {
+              "foreign": 1973,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 1974,
+        "name": "ImportDirective",
+        "src": "26:40:18"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            1833
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1991,
+            1833
+          ],
+          "name": "UpgradableStorage",
+          "scope": 1992
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": [
+                null
+              ]
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 1833,
+                  "type": "contract Ownable"
+                },
+                "id": 1975,
+                "name": "UserDefinedTypeName",
+                "src": "99:7:18"
+              }
+            ],
+            "id": 1976,
+            "name": "InheritanceSpecifier",
+            "src": "99:7:18"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "_implementation",
+              "scope": 1991,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 1977,
+                "name": "ElementaryTypeName",
+                "src": "155:7:18"
+              }
+            ],
+            "id": 1978,
+            "name": "VariableDeclaration",
+            "src": "155:32:18"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "NewImplementation"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "implementation",
+                      "scope": 1982,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1979,
+                        "name": "ElementaryTypeName",
+                        "src": "216:7:18"
+                      }
+                    ],
+                    "id": 1980,
+                    "name": "VariableDeclaration",
+                    "src": "216:22:18"
+                  }
+                ],
+                "id": 1981,
+                "name": "ParameterList",
+                "src": "215:24:18"
+              }
+            ],
+            "id": 1982,
+            "name": "EventDefinition",
+            "src": "192:48:18"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "implementation",
+              "payable": false,
+              "scope": 1991,
+              "stateMutability": "view",
+              "superFunction": 1840,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1983,
+                "name": "ParameterList",
+                "src": "385:2:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1990,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1984,
+                        "name": "ElementaryTypeName",
+                        "src": "409:7:18"
+                      }
+                    ],
+                    "id": 1985,
+                    "name": "VariableDeclaration",
+                    "src": "409:7:18"
+                  }
+                ],
+                "id": 1986,
+                "name": "ParameterList",
+                "src": "408:9:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1986
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 1978,
+                          "type": "address",
+                          "value": "_implementation"
+                        },
+                        "id": 1987,
+                        "name": "Identifier",
+                        "src": "431:15:18"
+                      }
+                    ],
+                    "id": 1988,
+                    "name": "Return",
+                    "src": "424:22:18"
+                  }
+                ],
+                "id": 1989,
+                "name": "Block",
+                "src": "418:33:18"
+              }
+            ],
+            "id": 1990,
+            "name": "FunctionDefinition",
+            "src": "362:89:18"
+          }
+        ],
+        "id": 1991,
+        "name": "ContractDefinition",
+        "src": "69:384:18"
+      }
+    ],
+    "id": 1992,
+    "name": "SourceUnit",
+    "src": "0:454:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-03-17T21:54:58.382Z"
+}
