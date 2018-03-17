@@ -19,6 +19,7 @@ contract Ownable {
    */
   function Ownable() public {
     owners.push(msg.sender);
+    OwnerAdded(0x0, msg.sender, 0);
   }
 
   /**
@@ -30,6 +31,7 @@ contract Ownable {
     for (uint256 i = 0; i < owners.length; i++) {
       if (msg.sender == owners[i]) {
         isOwner = true;
+        break;
       }
     }
 
