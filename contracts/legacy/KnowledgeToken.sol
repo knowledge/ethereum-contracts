@@ -9,8 +9,8 @@ import { UpgradeableTokenLegacy } from './UpgradableToken.sol';
  * Upgradable Standard ECR20 Token
  */
 contract KnowledgeLegacy is PayableTokenLegacy, UpgradeableTokenLegacy {
-  string public constant name = 'Mark';
-  string public constant symbol = 'MRK';
+  string public constant name = 'Knowledge';
+  string public constant symbol = 'KNW';
   uint8 public constant decimals = 8;
 
   /** 150,000,000.00000000 KNW tokens */
