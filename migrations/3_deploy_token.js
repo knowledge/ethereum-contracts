@@ -1,3 +1,3 @@
-const Knowledge = artifacts.require('Knowledge')
+const Knowledge = artifacts.require('Payable')
 
 module.exports = deployer => deployer.deploy(Knowledge)
