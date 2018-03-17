@@ -1,5 +1,5 @@
-const Knowledge = artifacts.require('Knowledge')
-const KnowledgeBase = artifacts.require('KnowledgeBase')
+const Knowledge = artifacts.require('Payable')
+const KnowledgeBase = artifacts.require('KnowledgeBaseLegacy')
 
 const { expectThrow } = require('./utils')
 
@@ -42,7 +42,7 @@ contract('Knowledge', accounts => {
       assert.strictEqual(await KNW.owners(1), accounts[1])
     })
 
-    it('should fail to add an owner it not authorized', async () => {
+    it('should fail to add an owner if not authorized', async () => {
       await expectThrow(KNW.addOwner(accounts[1], { from: accounts[1] }))
     })
 

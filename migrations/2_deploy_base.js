@@ -1,3 +1,3 @@
-const KnowledgeBase = artifacts.require('KnowledgeBase')
+const KnowledgeBase = artifacts.require('KnowledgeBaseLegacy')
 
 module.exports = deployer => deployer.deploy(KnowledgeBase)
