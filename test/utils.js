@@ -1,5 +1,3 @@
-const leftPad = require('left-pad')
-
 module.exports = {
   async expectThrow (promise) {
     const errMsg = 'Expected throw not received'

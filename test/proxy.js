@@ -28,7 +28,7 @@ contract('KnowledgeProxy', accounts => {
     await knowledge.transfer(testAccount, amount)
     await proxy.upgradeTo(newContract.address)
 
-    balance = await knowledge.balanceOf(testAccount)
+    const balance = await knowledge.balanceOf(testAccount)
     assert(balance.toNumber(), amount)
   })
 })
