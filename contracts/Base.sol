@@ -10,11 +10,11 @@ import { Upgradable } from './utils/Upgradable.sol';
  */
 contract Base is Upgradable, ERC20Token {
   function name() pure public returns (string) {
-    return 'Mark';
+    return 'Knowledge';
   }
 
   function symbol() pure public returns (string) {
-    return 'MRK';
+    return 'KNW';
   }
 
   function decimals() pure public returns (uint8) {
