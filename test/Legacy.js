@@ -1,11 +1,13 @@
-const Knowledge = artifacts.require('Payable')
+const Legacy = artifacts.require('Legacy')
+const Proxy = artifacts.require('KnowledgeProxy')
+const Knowledge = artifacts.require('KnowledgeLegacy')
 const KnowledgeBase = artifacts.require('KnowledgeBaseLegacy')
 
 const { expectThrow } = require('./utils')
 
 const initialSupply = 150000000 * 10 ** 8
 
-contract('Knowledge', accounts => {
+contract('Legacy', accounts => {
   let KNW, KNWB
 
   beforeEach(async () => {
@@ -179,22 +181,6 @@ contract('Knowledge', accounts => {
     })
 
     describe('transfers', () => {
-      it('should reverse ether transfer ', async () => {
-        const balanceBefore = await KNW.balanceOf(accounts[0])
-        assert.strictEqual(balanceBefore.toNumber(), initialSupply)
-
-        web3.eth.sendTransaction({
-          from: accounts[0],
-          to: KNW.address,
-          value: web3.toWei('10', 'Ether')
-        }, async err => {
-          assert(err)
-
-          const balanceAfter = await KNW.balanceOf(accounts[0])
-          assert.strictEqual(balanceAfter.toNumber(), initialSupply)
-        })
-      })
-
       it('should transfer tokens', async () => {
         await KNW.transfer(accounts[1], 10000, { from: accounts[0] })
         const balance = await KNW.balanceOf(accounts[1])
@@ -305,6 +291,22 @@ contract('Knowledge', accounts => {
         await expectThrow(KNW.transferFrom(accounts[0], accounts[2], 10, { from: accounts[1] }))
       })
 
+      it('should be able to increase the approved amount', async () => {
+        await KNW.approve(accounts[1], 100, { from: accounts[0] })
+        await KNW.increaseApproval(accounts[1], 100, { from: accounts[0] })
+
+        const allowance = await KNW.allowance(accounts[0], accounts[1])
+        assert.strictEqual(allowance.toNumber(), 200)
+      })
+
+      it('should be able to decrease the approved amount', async () => {
+        await KNW.approve(accounts[1], 100, { from: accounts[0] })
+        await KNW.decreaseApproval(accounts[1], 50, { from: accounts[0] })
+
+        const allowance = await KNW.allowance(accounts[0], accounts[1])
+        assert.strictEqual(allowance.toNumber(), 50)
+      })
+
       it('should fire Approval event', async () => {
         const res = await KNW.approve(accounts[1], 1000, { from: accounts[0] })
         const log = res.logs.find(element => element.event.match('Approval'))
@@ -376,6 +378,23 @@ contract('Knowledge', accounts => {
         assert.strictEqual(log.args.fee.toNumber(), fee)
         assert.strictEqual(log.args.ref, ref)
       })
+    })
+  })
+
+  describe('upgrade from legacy', () => {
+    it('should retain the balances', async () => {
+      const proxy = await Proxy.new()
+      const imp = await Legacy.new()
+
+      await proxy.upgradeTo(imp.address)
+      KNW = Legacy.at(proxy.address)
+
+      await KNWB.setNextContract(KNW.address)
+      await KNW.setPrevContract(KNWB.address)
+      await KNWB.upgrade()
+
+      balance = await KNW.balanceOf(accounts[0])
+      assert.strictEqual(balance.toNumber(), initialSupply)
     })
   })
 })

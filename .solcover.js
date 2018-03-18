@@ -1,3 +1,1 @@
-module.exports = {
-    copyPackages: ['zeppelin-solidity']
-};
+module.exports = { };
