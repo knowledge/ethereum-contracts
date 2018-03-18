@@ -393,7 +393,7 @@ contract('Legacy', accounts => {
       await KNW.setPrevContract(KNWB.address)
       await KNWB.upgrade()
 
-      balance = await KNW.balanceOf(accounts[0])
+      const balance = await KNW.balanceOf(accounts[0])
       assert.strictEqual(balance.toNumber(), initialSupply)
     })
   })
