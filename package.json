@@ -14,7 +14,9 @@
     "deploy-ropsten": "truffle migrate --network ropsten",
     "test": "truffle test",
     "doctoc": "doctoc --github --title \"## Contents\" README.md",
-    "ganache": "eval $(cat .env) && ganache-cli --db chain -m \"$MNEMONIC\""
+    "console": "truffle console",
+    "ganache": "eval $(cat .env) && ganache-cli --db chain -m \"$MNEMONIC\"",
+    "truffle:exec": "f () { truffle exec ./scripts/$1.js $2; }; f"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,6 +25,7 @@
     "eth-gas-reporter": "^0.1.1",
     "ganache-cli": "^6.0.3",
     "left-pad": "^1.2.0",
+    "prompt-promise": "^1.0.3",
     "rimraf": "^2.6.2",
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
