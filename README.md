@@ -27,6 +27,7 @@ The Knowledge Token Sale starts on January 15, 2018 and it ends April 8th at 12p
   - [Project Dependencies](#project-dependencies)
   - [Running Development Mode](#running-development-mode)
   - [Testing your code](#testing-your-code)
+  - [Running scripts](#running-scripts)
 - [Contributing](#contributing)
 - [Bug Reporting](#bug-reporting)
 - [License](#license)
@@ -89,7 +90,6 @@ In separate tabs of your console run the following commands:
 
 ```
 npm run ganache
-npm run develop
 npm run deploy
 ```
 
@@ -104,6 +104,16 @@ npm run ganache
 npm run lint
 npm run test
 ```
+
+### Running scripts
+
+You can run scripts with automated functionality like creating contracts and transfer tokens. Here's a list of scripts and how to run them:
+
+- `npm run truffle:exec -- current-version` - Displays the current version
+- `npm run truffle:exec -- deploy-first-time [--network development]` - Deploy all the neccesary contracts needed for the first time, or if you want to just create all the contracts again form zero
+- `npm run truffle:exec -- upgrade-to-contract [--network development]` - Upgrades the proxy contract to a new version, you'll be prompted with the contract name (the contract class name) of the contract to upgrade to. This will also updates the CURRENT_VERSION file in the root
+- `npm run truffle:exec -- transfer-tokens [--network development]` - This will help you transfer tokens from an account to another
+- `npm run truffle:exec -- transfer-ether [--network development]` - This will help you transfer ether from an account to another
 
 ## Contributing
 
