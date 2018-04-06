@@ -30,7 +30,7 @@ contract('Base', accounts => {
 
     it('test correct setting of vanity information', async () => {
       const name = await KNW.name()
-      assert.strictEqual(name, 'Knowledge')
+      assert.strictEqual(name, 'Knowledge.io')
 
       const decimals = await KNW.decimals()
       assert.strictEqual(decimals.toNumber(), 8)
