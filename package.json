@@ -30,7 +30,7 @@
     "run-with-testrpc": "^0.3.0",
     "snazzy": "^7.0.0",
     "solidity-coverage": "^0.4.7",
-    "solium": "^1.1.0",
+    "solium": "^1.1.7",
     "standard": "^10.0.3",
     "truffle": "^4.0.4",
     "truffle-hdwallet-provider": "0.0.3"
